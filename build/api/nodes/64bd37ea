@@ -1,0 +1,12 @@
+{
+  "type": "plotly.plotly_dataset.PlotlyDataset",
+  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/07_model_output/plot_roc_auc_lgbm_px.json",
+  "run_command": "kedro run --to-outputs=plot_roc_auc_lgbm_px",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 314,
+    "columns": 5,
+    "file_size": 4096
+  }
+}

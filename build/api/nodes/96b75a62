@@ -1,0 +1,25 @@
+{
+  "code": "def select_features(train, tests, stat_res, corr_res, params):\n    \"\"\"\n    Select the features in the train dataframe.\n    \"\"\"\n    n_vars = params['n_vars']\n    target_col = params['target']\n    if n_vars =='all':\n        selected_features = [x for x in train.columns if x != target_col]\n        criteria = 'all'\n    else:\n        selected_features = _get_selected_features(train,stat_res,corr_res,params)\n        criteria = {\n        'method':params['method'],\n        'n_vars':params['n_vars'],\n        'kwarg':params['kwarg']\n        }\n    metrics = {'columns':selected_features, 'criteria':criteria}\n\n    return train[selected_features+[target_col]], tests[selected_features+[target_col]], metrics\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\feature_selection\\nodes.py",
+  "parameters": {
+    "fs_params": {
+      "target": "Mood_State",
+      "n_vars": "all",
+      "method": "backward",
+      "kwarg": "GBM"
+    }
+  },
+  "run_command": "kedro run --to-nodes='feature_selection.select_features_node'",
+  "inputs": [
+    "final_train_data",
+    "final_test_data",
+    "feat_rank_stat_results",
+    "feat_rank_corr_results",
+    "params:fs_params"
+  ],
+  "outputs": [
+    "train_model",
+    "test_model",
+    "selected_features"
+  ]
+}

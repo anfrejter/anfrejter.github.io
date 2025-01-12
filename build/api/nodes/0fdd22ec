@@ -1,0 +1,12 @@
+{
+  "code": "def plot_Educational_Level_distribution(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable 'Educational_Level'\n    \"\"\"\n    return (data.groupby('Educational_Level', observed=False)\n            .count()[['Time']]\n            .reset_index()\n            .rename(columns={'Time':'Count4'}))\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\eda\\nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='plotting1.plot_Educational_Level_distribution'",
+  "inputs": [
+    "preprocessed_data"
+  ],
+  "outputs": [
+    "plot_Educational_Level_distribution_px"
+  ]
+}

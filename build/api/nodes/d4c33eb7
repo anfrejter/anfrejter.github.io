@@ -1,0 +1,46 @@
+{
+  "code": "def preprocess_data(data: pd.DataFrame, params: dict):\n    \"\"\"\n    Preprocess the data by splitting the EEG Power Bands and Blood Pressure columns\n    \"\"\"\n    # Drop ID column\n    data.drop(columns=['ID'], inplace=True)\n\n    eeg_power_bands_split = _parse_eeg_bands(data['EEG Power Bands'])\n    data['EEG Power Bands D'] = eeg_power_bands_split[0]\n    data['EEG Power Bands A'] = eeg_power_bands_split[1]\n    data['EEG Power Bands B'] = eeg_power_bands_split[2]\n    data.drop(columns=['EEG Power Bands'], inplace=True)\n\n    blood_pressure_split = _parse_blood_pressure(data['Blood Pressure (mmHg)'])\n    data['Blood Pressure Systolic'] = blood_pressure_split[0]\n    data['Blood Pressure Diastolic'] = blood_pressure_split[1]\n    data.drop(columns=['Blood Pressure (mmHg)'], inplace=True)\n\n    renamed_cols = _rename_cols(data.columns)\n    data.columns = renamed_cols\n\n    data = _cast_data(data, params)\n\n    return data\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\preprocess_data\\nodes.py",
+  "parameters": {
+    "data_types": {
+      "categorical": [
+        "Cognitive_Load",
+        "Mood_State",
+        "Psychological_State",
+        "Task_Type",
+        "Gender",
+        "Educational_Level",
+        "Study_Major"
+      ],
+      "float": [
+        "HRV",
+        "GSR",
+        "Oxygen_Saturation",
+        "Ambient_Noise",
+        "Skin_Temp",
+        "EEG_Power_Bands_D",
+        "EEG_Power_Bands_A",
+        "EEG_Power_Bands_B"
+      ],
+      "integer": [
+        "Heart_Rate",
+        "Respiration_Rate",
+        "Focus_Duration",
+        "Age",
+        "Blood_Pressure_Systolic",
+        "Blood_Pressure_Diastolic"
+      ],
+      "datetime": [
+        "Time"
+      ]
+    }
+  },
+  "run_command": "kedro run --to-nodes='preprocess_data_node'",
+  "inputs": [
+    "raw_data",
+    "params:data_types"
+  ],
+  "outputs": [
+    "preprocessed_data"
+  ]
+}

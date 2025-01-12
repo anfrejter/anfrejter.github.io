@@ -1,0 +1,12 @@
+{
+  "code": "def plot_Mood_State_by_Gender_distribution(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable \n    \"\"\"\n    return data[['Mood_State','Gender']]\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\eda\\nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='plotting2.plot_Mood_State_by_Gender_distribution'",
+  "inputs": [
+    "train_data"
+  ],
+  "outputs": [
+    "plot_Mood_State_by_Gender_distribution_px"
+  ]
+}

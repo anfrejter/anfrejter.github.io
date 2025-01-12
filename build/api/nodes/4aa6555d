@@ -1,0 +1,12 @@
+{
+  "type": "pickle.pickle_dataset.PickleDataset",
+  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/02_intermediate/preprocessed_data.pkl",
+  "run_command": "kedro run --to-outputs=preprocessed_data",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 1000,
+    "columns": 22,
+    "file_size": 130418
+  }
+}

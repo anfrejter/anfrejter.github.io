@@ -1,0 +1,20 @@
+{
+  "code": "def get_feat_rank_stat(train, params):\n    \"\"\"\n    Calculate feature ranking statistics using ANOVA and Kruskal-Wallis tests.\n    \"\"\"\n\n    p_an_tests = []\n    p_kru_tests = []\n    target_col = params['target']\n    columns = [x for x in train.columns if x != target_col]\n\n    for col in columns:\n        unique_classes = train[target_col].unique()\n        group_data = [train[train[target_col] == cls][col] for cls in unique_classes]\n        p_kru = kruskal(*group_data).pvalue\n        p_anova = f_oneway(*group_data).pvalue\n        p_kru_tests.append(float(p_kru))\n        p_an_tests.append(float(p_anova))\n\n    return pd.DataFrame({\n        \"variable\": columns,\n        \"p_kruskal\": p_kru_tests,\n        \"p_anova\": p_an_tests,\n        'kruskal_rank': pd.Series(p_kru_tests).rank().astype(int).to_list(),\n        \"anova_rank\":  pd.Series(p_an_tests).rank().astype(int).to_list(),\n    }).sort_values('kruskal_rank')\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\feature_selection\\nodes.py",
+  "parameters": {
+    "fs_params": {
+      "target": "Mood_State",
+      "n_vars": "all",
+      "method": "backward",
+      "kwarg": "GBM"
+    }
+  },
+  "run_command": "kedro run --to-nodes='feature_selection.get_feat_rank_stat_node'",
+  "inputs": [
+    "final_train_data",
+    "params:fs_params"
+  ],
+  "outputs": [
+    "feat_rank_stat_results"
+  ]
+}

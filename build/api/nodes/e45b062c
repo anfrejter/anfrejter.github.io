@@ -1,0 +1,27 @@
+{
+  "parameters": {
+    "num_transform": {
+      "normalize": [
+        "HRV"
+      ],
+      "standardize": [
+        "GSR",
+        "Oxygen_Saturation",
+        "Heart_Rate",
+        "Ambient_Noise",
+        "Respiration_Rate",
+        "Skin_Temp",
+        "Focus_Duration",
+        "Age",
+        "EEG_Power_Bands_D",
+        "EEG_Power_Bands_A",
+        "EEG_Power_Bands_B",
+        "Blood_Pressure_Systolic",
+        "Blood_Pressure_Diastolic"
+      ],
+      "winsorize": [
+        null
+      ]
+    }
+  }
+}

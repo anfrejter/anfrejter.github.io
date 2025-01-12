@@ -1,0 +1,12 @@
+{
+  "type": "plotly.plotly_dataset.PlotlyDataset",
+  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/07_model_output/plot_confusion_matrix_xgb_px.json",
+  "run_command": "kedro run --to-outputs=plot_confusion_matrix_xgb_px",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 200,
+    "columns": 2,
+    "file_size": 4096
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "ordinal_order": {
+      "Cognitive_Load": [
+        "Low",
+        "Moderate",
+        "High"
+      ],
+      "Educational_Level": [
+        "High School",
+        "Undergraduate",
+        "Postgraduate"
+      ]
+    }
+  }
+}

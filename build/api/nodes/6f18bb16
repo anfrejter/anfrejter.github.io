@@ -1,0 +1,19 @@
+{
+  "code": "def drop_columns(test_df, train_df, columns):\n    \"\"\"\n    Drops the specified columns from the test and train data.\n    \"\"\"\n    return test_df.drop(columns=columns), train_df.drop(columns=columns)\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\feature_engineering\\nodes.py",
+  "parameters": {
+    "col_drop": [
+      "Time"
+    ]
+  },
+  "run_command": "kedro run --to-nodes='feature_engineering.drop_columns_node'",
+  "inputs": [
+    "processed_cat_train",
+    "processed_cat_test",
+    "params:col_drop"
+  ],
+  "outputs": [
+    "final_train_data",
+    "final_test_data"
+  ]
+}

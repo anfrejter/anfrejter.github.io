@@ -1,0 +1,8 @@
+{
+  "type": "tracking.json_dataset.JSONDataset",
+  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/09_tracking/selected_features.json",
+  "run_command": "kedro run --to-outputs=selected_features",
+  "preview": null,
+  "preview_type": null,
+  "stats": null
+}
