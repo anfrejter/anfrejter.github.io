@@ -1,8 +1,0 @@
-{
-  "type": "tracking.metrics_dataset.MetricsDataset",
-  "filepath": "/Users/anfrejter/Documents/GitHub/psychological-state-classification/data/09_tracking/initial_cv_score.json",
-  "run_command": "kedro run --to-outputs=initial_cv_score",
-  "preview": null,
-  "preview_type": null,
-  "stats": null
-}
