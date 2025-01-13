@@ -1,0 +1,8 @@
+{
+  "max_depth": 2,
+  "min_child_weight": 2,
+  "gamma": 2,
+  "learning_rate": 0.34793888133015305,
+  "objective": "multi:softprob",
+  "num_class": 4
+}

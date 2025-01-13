@@ -1,0 +1,15 @@
+KNN,GBM,LogReg
+HRV,Oxygen_Saturation,HRV
+Oxygen_Saturation,Cognitive_Load,GSR
+Ambient_Noise,Psychological_State,Heart_Rate
+Psychological_State,Focus_Duration,Cognitive_Load
+Skin_Temp,Age,Psychological_State
+Task_Type,Educational_Level,Respiration_Rate
+Age,Study_Major,Focus_Duration
+Educational_Level,EEG_Power_Bands_D,Task_Type
+Study_Major,EEG_Power_Bands_A,Age
+EEG_Power_Bands_D,EEG_Power_Bands_B,Educational_Level
+EEG_Power_Bands_B,Blood_Pressure_Diastolic,Study_Major
+Gender_Female,Gender_Female,EEG_Power_Bands_D
+Gender_Male,Gender_Male,Blood_Pressure_Systolic
+Gender_Other,Gender_Other,Blood_Pressure_Diastolic

@@ -1,0 +1,27 @@
+{
+  "columns": [
+    "HRV",
+    "GSR",
+    "Oxygen_Saturation",
+    "Heart_Rate",
+    "Ambient_Noise",
+    "Cognitive_Load",
+    "Psychological_State",
+    "Respiration_Rate",
+    "Skin_Temp",
+    "Focus_Duration",
+    "Task_Type",
+    "Age",
+    "Educational_Level",
+    "Study_Major",
+    "EEG_Power_Bands_D",
+    "EEG_Power_Bands_A",
+    "EEG_Power_Bands_B",
+    "Blood_Pressure_Systolic",
+    "Blood_Pressure_Diastolic",
+    "Gender_Female",
+    "Gender_Male",
+    "Gender_Other"
+  ],
+  "criteria": "all"
+}

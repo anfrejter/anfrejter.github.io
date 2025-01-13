@@ -1,0 +1,7 @@
+{
+  "learning_rate": 0.0923351274152545,
+  "max_depth": 4,
+  "min_gain_to_split": 0.06031123886998218,
+  "objective": "multiclass",
+  "num_class": 4
+}

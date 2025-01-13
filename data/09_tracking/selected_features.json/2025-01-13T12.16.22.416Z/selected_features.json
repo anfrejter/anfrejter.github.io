@@ -1,0 +1,24 @@
+{
+  "columns": [
+    "GSR",
+    "Heart_Rate",
+    "Ambient_Noise",
+    "Cognitive_Load",
+    "Respiration_Rate",
+    "Skin_Temp",
+    "Focus_Duration",
+    "Task_Type",
+    "Age",
+    "Study_Major",
+    "EEG_Power_Bands_D",
+    "EEG_Power_Bands_A",
+    "EEG_Power_Bands_B",
+    "Blood_Pressure_Systolic",
+    "Gender_Male"
+  ],
+  "criteria": {
+    "method": "backward",
+    "n_vars": 15,
+    "kwarg": "GBM"
+  }
+}

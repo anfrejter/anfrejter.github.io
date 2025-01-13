@@ -1,0 +1,18 @@
+{
+  "xgb_train_roc_auc": 0.8234933059646726,
+  "xgb_train_accuracy": 0.5775,
+  "xgb_test_roc_auc": 0.5268445600397724,
+  "xgb_test_accuracy": 0.29,
+  "lr_train_roc_auc": 0.5820792064033912,
+  "lr_train_accuracy": 0.33,
+  "lr_test_roc_auc": 0.5213917602169964,
+  "lr_test_accuracy": 0.24,
+  "lgbm_train_roc_auc": 0.9967091969319827,
+  "lgbm_train_accuracy": 0.96375,
+  "lgbm_test_roc_auc": 0.5114440238901639,
+  "lgbm_test_accuracy": 0.275,
+  "ada_train_roc_auc": 0.8045828381352116,
+  "ada_train_accuracy": 0.5175,
+  "ada_test_roc_auc": 0.49551251876360364,
+  "ada_test_accuracy": 0.25
+}
