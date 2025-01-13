@@ -162,5 +162,3 @@ venv.bak/
 
 # mlflow local runs
 mlruns/*
-
-session_store.db
