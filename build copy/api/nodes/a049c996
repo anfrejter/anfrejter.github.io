@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "cat_transform": {
+      "onehot": [
+        "Gender"
+      ],
+      "catboost": [
+        "Study_Major",
+        "Psychological_State",
+        "Task_Type"
+      ],
+      "ordinal": [
+        "Cognitive_Load",
+        "Educational_Level"
+      ],
+      "target": [
+        "Mood_State"
+      ]
+    }
+  }
+}

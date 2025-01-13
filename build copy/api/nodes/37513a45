@@ -1,0 +1,20 @@
+{
+  "code": "def optimize_lr_hyperparams(train, params):\n    res = _get_optuna_params(train, LogisticRegression, _logistic_param_space, params)\n    return res, res\n",
+  "filepath": "psychological-state-classification/src/psychological_state_classification/pipelines/modeling/nodes.py",
+  "parameters": {
+    "params": {
+      "target": "Mood_State",
+      "scoring": "roc_auc_ovr",
+      "n_trials": 30
+    }
+  },
+  "run_command": "kedro run --to-nodes='hyperparameter_tuning.optimize_lr_hyperparams_node'",
+  "inputs": [
+    "train_model",
+    "params:params"
+  ],
+  "outputs": [
+    "LR_optuna_params",
+    "LR_optuna_params_"
+  ]
+}

@@ -1,0 +1,606 @@
+raw_data:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/psychological_state_dataset.csv
+  metadata:
+    kedro-viz:
+      layer: raw
+
+preprocessed_data:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/preprocessed_data.pkl
+  metadata:
+    kedro-viz:
+      layer: intermediate
+
+train_data:
+  type: pickle.PickleDataset
+  filepath: data/03_primary/train_data.pkl
+  metadata:
+    kedro-viz:
+      layer: primary
+
+test_data:
+  type: pickle.PickleDataset
+  filepath: data/03_primary/test_data.pkl
+  metadata:
+    kedro-viz:
+      layer: primary
+
+processed_cat_train:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/processed_cat_train.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+processed_cat_test:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/processed_cat_test.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+processed_num_train:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/processed_num_train.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+processed_num_test:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/processed_num_test.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+final_train_data:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/final_train_data.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+final_test_data:
+  type: pickle.PickleDataset
+  filepath: data/04_feature/final_test_data.pkl
+  metadata:
+    kedro-viz:
+      layer: feature
+
+feat_rank_stat_results:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/feat_rank_stat_results.csv
+  metadata:
+    kedro-viz:
+      layer: feature
+      preview_args:
+        nrows: 20
+
+feat_rank_corr_results:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/feat_rank_corr_results.csv
+  metadata:
+    kedro-viz:
+      layer: feature
+      preview_args:
+        nrows: 20
+
+# feat_backward_results:
+#   type: pandas.CSVDataset
+#   filepath: data/04_feature/feat_backward_results.csv
+#   metadata:
+#     kedro-viz:
+#       layer: feature
+#       preview_args:
+#         nrows: 20
+
+# feat_forward_results:
+#   type: pandas.CSVDataset
+#   filepath: data/04_feature/feat_forward_results.csv
+#   metadata:
+#     kedro-viz:
+#       layer: feature
+#       preview_args:
+#         nrows: 20
+
+train_model:
+  type: pickle.PickleDataset
+  filepath: data/05_model_input/train_model.pkl
+  metadata:
+    kedro-viz:
+      layer: model
+
+test_model:
+  type: pickle.PickleDataset
+  filepath: data/05_model_input/test_model.pkl
+  metadata:
+    kedro-viz:
+      layer: model
+
+selected_features:
+  type: tracking.JSONDataset
+  filepath: data/09_tracking/selected_features.json
+
+initial_cv_score:
+  type: tracking.MetricsDataset
+  filepath: data/09_tracking/initial_cv_score.json
+  metadata:
+    kedro-viz:
+      layer: initial_model
+
+LR_optuna_params:
+  type: tracking.JSONDataset
+  filepath: data/09_tracking/LR_optuna_params.json
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+LR_optuna_params_:
+  type: json.JSONDataset
+  filepath: data/09_tracking/LR_optuna_params_.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+LGBM_optuna_params:
+  type: tracking.JSONDataset
+  filepath: data/09_tracking/LGBM_optuna_params.json
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+LGBM_optuna_params_:
+  type: json.JSONDataset
+  filepath: data/09_tracking/LGBM_optuna_params_.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+XGB_optuna_params:
+  type: tracking.JSONDataset
+  filepath: data/09_tracking/XGB_optuna_params.json
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+XGB_optuna_params_:
+  type: json.JSONDataset
+  filepath: data/09_tracking/XGB_optuna_params_.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+ADA_optuna_params:
+  type: tracking.JSONDataset
+  filepath: data/09_tracking/ADA_optuna_params.json
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+ADA_optuna_params_:
+  type: json.JSONDataset
+  filepath: data/09_tracking/ADA_optuna_params_.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: hyperparameter_tuning
+
+models_evaluation:
+  type: tracking.MetricsDataset
+  filepath: data/09_tracking/models_evaluation.json
+  metadata:
+    kedro-viz:
+      layer: model_output
+
+y_train_preds:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/y_train_preds.pkl
+  metadata:
+    kedro-viz:
+      layer: model_output
+
+y_test_preds:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/y_test_preds.pkl
+  metadata:
+    kedro-viz:
+      layer: model_output
+
+plot_mood_state_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_mood_state_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: pie
+    fig:
+      names: Mood_State
+      values: Count
+    layout:
+      xaxis_title: Mood State
+      title: Mood State Distribution
+    observable: True
+
+plot_HRV_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_HRV_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: histogram
+    fig:
+      x: HRV
+    layout:
+      xaxis_title: HRV
+      title: Heart Rate Variability Distribution
+    nbins: 80
+
+plot_GSR_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_GSR_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: histogram
+    fig:
+      x: GSR
+    layout:
+      xaxis_title: GSR
+      title: Galvanic Skin Response Distribution
+    nbins: 80
+
+plot_Age_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Age_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: box
+    fig:
+      x: Age
+    layout:
+      xaxis_title: Age
+      title: Student's Age Distribution
+
+plot_Heart_Rate_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Heart_Rate_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: violin
+    fig:
+      x: Heart_Rate
+    layout:
+      xaxis_title: Heart Rate
+      title: Student's Heart Rate Distribution
+
+plot_Gender_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Gender_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: pie
+    fig:
+      names: Gender
+      values: Count2
+    layout:
+      xaxis_title: Gender
+      title: Gender Distribution
+
+
+plot_Task_Type_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Task_Type_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: pie
+    fig:
+      names: Task_Type
+      values: Count3
+    layout:
+      xaxis_title: Task_Type
+      title: Task Type Distribution
+
+plot_Educational_Level_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Educational_Level_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: pie
+    fig:
+      names: Educational_Level
+      values: Count4
+    layout:
+      xaxis_title: Educational_Level
+      title: Educational Level Distribution
+
+
+plot_Mood_State_by_Gender_distribution_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Mood_State_by_Gender_distribution_px.json
+  metadata:
+    kedro-viz:
+      layer: primary
+  plotly_args:
+    type: histogram
+    fig:
+     x: Gender
+     color: Mood_State
+    layout:
+      xaxis_title: Gender
+      yaxis_title: Moods State 
+      title: Mood State by Gender Distribution
+    nbins: 80
+
+plot_Age_vs_Mood_State_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Age_vs_Mood_State_px.json
+  metadata:
+    kedro-viz:
+      layer: primary
+  plotly_args:
+    type: box
+    fig:
+      x: Mood_State
+      y: Age
+    layout:
+      xaxis_title: Mood State
+      yaxis_title: Age
+      title: Age vs Mood State Distribution
+
+plot_Task_Type_vs_Educational_Level_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Task_Type_vs_Educational_Level_px.json
+  metadata:
+    kedro-viz:
+      layer: primary
+  plotly_args:
+    type: histogram
+    fig:
+      x: Task_Type
+      color: Educational_Level
+    layout:
+      xaxis_title: Task Type
+      yaxis_title: Educational Level
+      title: Task Type vs Educational Level Distribution
+    nbins: 80
+
+plot_Skin_Temp_vs_Mood_State_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Skin_Temp_vs_Mood_State_px.json
+  metadata:
+    kedro-viz:
+      layer: primary
+  plotly_args:
+    type: box
+    fig:
+      x: Mood_State
+      y: Skin_Temp
+    layout:
+      xaxis_title: Mood State
+      yaxis_title: Skin Temp
+      title: Skin Temerature vs Mood State Distribution
+
+plot_Heart_Rate_vs_HRV_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Heart_Rate_vs_HRV_px.json
+  metadata:
+    kedro-viz:
+      layer: primary
+  plotly_args:
+    type: scatter
+    fig:
+      x: Heart_Rate
+      y: HRV
+    layout:
+      xaxis_title: Heart Rate
+      yaxis_title: Heart Rate Variability
+      title: Heart Rate vs Heart Rate Variability Distribution
+
+plot_Time_px:
+  type: plotly.PlotlyDataset
+  filepath: data/03_primary/plot_Time_px.json
+  metadata:
+    kedro-viz:
+      layer: intermediate
+  plotly_args:
+    type: line
+    fig:
+      x: Time
+    layout:
+      xaxis_title: Time
+      title: Time Distribution
+
+plot_confusion_matrix_xgb_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_confusion_matrix_xgb_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: density_heatmap
+    fig:
+      x: 'Predicted label'
+      y: "True label"
+      title: "Confusion Matrix - XGB test data"
+      color_continuous_scale: "Blues"
+      text_auto: True
+
+plot_confusion_matrix_lgbm_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_confusion_matrix_lgbm_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: density_heatmap
+    fig:
+      x: 'Predicted label'
+      y: "True label"
+      title: "Confusion Matrix - LGBM test data"
+      color_continuous_scale: "Blues"
+      text_auto: True
+
+plot_confusion_matrix_lr_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_confusion_matrix_lr_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: density_heatmap
+    fig:
+      x: 'Predicted label'
+      y: "True label"
+      title: "Confusion Matrix - LR test data"
+      color_continuous_scale: "Blues"
+      text_auto: True
+
+plot_confusion_matrix_ada_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_confusion_matrix_ada_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: density_heatmap
+    fig:
+      x: 'Predicted label'
+      y: "True label"
+      title: "Confusion Matrix - ADA test data"
+      color_continuous_scale: "Blues"
+      text_auto: True
+
+plot_roc_auc_xgb_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_roc_auc_xgb_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: line
+    fig:
+      x: 'FPR'
+      y: 'TPR'
+      color: "Class"
+      line_group: "Model"
+      hover_data: {"AUC": True, "Model": True, "Class": True}
+      title: 'ROC Curve - XGB test data'
+
+plot_roc_auc_lgbm_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_roc_auc_lgbm_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: line
+    fig:
+      x: 'FPR'
+      y: 'TPR'
+      color: "Class"
+      line_group: "Model"
+      hover_data: {"AUC": True, "Model": True, "Class": True}
+      title: 'ROC Curve - LGBM test data'
+
+plot_roc_auc_lr_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_roc_auc_lr_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: line
+    fig:
+      x: 'FPR'
+      y: 'TPR'
+      color: "Class"
+      line_group: "Model"
+      hover_data: {"AUC": True, "Model": True, "Class": True}
+      title: 'ROC Curve - LR test data'
+
+plot_roc_auc_ada_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_roc_auc_ada_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: line
+    fig:
+      x: 'FPR'
+      y: 'TPR'
+      color: "Class"
+      line_group: "Model"
+      hover_data: {"AUC": True, "Model": True, "Class": True}
+      title: 'ROC Curve - ADA test data'
+
+plot_fi_xgb_w_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_fi_xgb_w_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: bar
+    fig:
+      x: 'importance'
+      y: 'feature'
+      orientation: 'h'
+      color: 'importance'
+      color_continuous_scale: 'Blues'
+    layout:
+      title: 'Feature Importance (XGBoost) weight'
+      xaxis:
+        title: 'Importance'
+      yaxis:
+        title: 'Features'
+        categoryorder: 'total ascending'
+
+plot_fi_xgb_g_px:
+  type: plotly.PlotlyDataset
+  filepath: data/07_model_output/plot_fi_xgb_g_px.json
+  versioned: True
+  metadata:
+    kedro-viz:
+      layer: model_output
+  plotly_args:
+    type: bar
+    fig:
+      x: 'importance'
+      y: 'feature'
+      orientation: 'h'
+      color: 'importance'
+      color_continuous_scale: 'Blues'
+    layout:
+      title: 'Feature Importance (XGBoost) gain'
+      xaxis:
+        title: 'Importance'
+      yaxis:
+        title: 'Features'
+        categoryorder: 'total ascending'

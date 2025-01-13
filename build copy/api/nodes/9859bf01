@@ -1,0 +1,12 @@
+{
+  "type": "plotly.plotly_dataset.PlotlyDataset",
+  "filepath": "/Users/anfrejter/Documents/GitHub/psychological-state-classification/data/03_primary/plot_mood_state_distribution_px.json",
+  "run_command": "kedro run --to-outputs=plot_mood_state_distribution_px",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 4,
+    "columns": 2,
+    "file_size": 7343
+  }
+}

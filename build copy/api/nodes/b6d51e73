@@ -1,0 +1,46 @@
+{
+  "code": "def process_cat(train_df, test_df, params, params_ordinal):\n    \"\"\"\n    Processes categorical features in the test and train dataframes \n    based on specified parameters.\n    \"\"\"\n    train_df = train_df.reset_index(drop=True)\n    test_df = test_df.reset_index(drop=True)\n\n    for column in [x for x in train_df.columns if train_df[x].dtype in ['category']]:\n        if column in params['onehot']:\n            train_df, test_df = _onehot_encode(train_df, test_df, column)\n        elif column in params['catboost']:\n            train_df, test_df = _cb_encode(train_df, test_df, column, params)\n        elif column in params['ordinal']:\n            train_df, test_df = _ordinal_encode(train_df, test_df, column, params_ordinal)\n        else:\n            if column not in params['target']:\n                logger.warning(\"Categorical olumn %s not in encoding list\", column)\n    return train_df, test_df\n",
+  "filepath": "psychological-state-classification/src/psychological_state_classification/pipelines/feature_engineering/nodes.py",
+  "parameters": {
+    "cat_transform": {
+      "onehot": [
+        "Gender"
+      ],
+      "catboost": [
+        "Study_Major",
+        "Psychological_State",
+        "Task_Type"
+      ],
+      "ordinal": [
+        "Cognitive_Load",
+        "Educational_Level"
+      ],
+      "target": [
+        "Mood_State"
+      ]
+    },
+    "ordinal_order": {
+      "Cognitive_Load": [
+        "Low",
+        "Moderate",
+        "High"
+      ],
+      "Educational_Level": [
+        "High School",
+        "Undergraduate",
+        "Postgraduate"
+      ]
+    }
+  },
+  "run_command": "kedro run --to-nodes='feature_engineering.categorical_transform_node'",
+  "inputs": [
+    "processed_num_train",
+    "processed_num_test",
+    "params:cat_transform",
+    "params:ordinal_order"
+  ],
+  "outputs": [
+    "processed_cat_train",
+    "processed_cat_test"
+  ]
+}

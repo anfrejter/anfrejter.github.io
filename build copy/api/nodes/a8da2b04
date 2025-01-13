@@ -1,0 +1,12 @@
+{
+  "code": "def plot_Age_distribution(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable 'Age'\n    \"\"\"\n    return data[['Age']]\n",
+  "filepath": "psychological-state-classification/src/psychological_state_classification/pipelines/eda/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='plotting1.plot_Age_distribution'",
+  "inputs": [
+    "preprocessed_data"
+  ],
+  "outputs": [
+    "plot_Age_distribution_px"
+  ]
+}

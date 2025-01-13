@@ -1,0 +1,39 @@
+{
+  "code": "def process_num(train_df, test_df, params):\n    \"\"\"\n    Processes numerical features in the test and train dataframes \n    based on specified parameters.\n    \"\"\"\n    for column in [x for x in train_df.columns if train_df[x].dtype in ['float','int']]:\n        if column in params['winsorize']:\n            q_lower = np.quantile(train_df[column], 0.05)\n            q_upper = np.quantile(train_df[column], 0.95)\n            train_df[column] = _winsorize(train_df[column], q_lower, q_upper)\n            test_df[column] = _winsorize(train_df[column], q_lower, q_upper)\n        elif column in params['normalize']:\n            _mean = train_df[column].mean()\n            _std = train_df[column].std()\n            train_df[column] = _normalize(train_df[column], _mean, _std)\n            test_df[column] = _normalize(test_df[column], _mean, _std)\n        elif column in params['standardize']:\n            _min = train_df[column].min()\n            _max = train_df[column].max()\n            train_df[column] = _standardize(train_df[column], _min, _max)\n            test_df[column] = _standardize(test_df[column], _min, _max)\n        else:\n            logger.warning(\"Numerical column %s not in encoding list\", column)\n\n    return train_df, test_df\n",
+  "filepath": "psychological-state-classification/src/psychological_state_classification/pipelines/feature_engineering/nodes.py",
+  "parameters": {
+    "num_transform": {
+      "normalize": [
+        "HRV"
+      ],
+      "standardize": [
+        "GSR",
+        "Oxygen_Saturation",
+        "Heart_Rate",
+        "Ambient_Noise",
+        "Respiration_Rate",
+        "Skin_Temp",
+        "Focus_Duration",
+        "Age",
+        "EEG_Power_Bands_D",
+        "EEG_Power_Bands_A",
+        "EEG_Power_Bands_B",
+        "Blood_Pressure_Systolic",
+        "Blood_Pressure_Diastolic"
+      ],
+      "winsorize": [
+        null
+      ]
+    }
+  },
+  "run_command": "kedro run --to-nodes='feature_engineering.numerical_transform_node'",
+  "inputs": [
+    "train_data",
+    "test_data",
+    "params:num_transform"
+  ],
+  "outputs": [
+    "processed_num_train",
+    "processed_num_test"
+  ]
+}

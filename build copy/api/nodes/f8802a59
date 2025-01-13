@@ -1,0 +1,12 @@
+{
+  "type": "pickle.pickle_dataset.PickleDataset",
+  "filepath": "/Users/anfrejter/Documents/GitHub/psychological-state-classification/data/05_model_input/test_model.pkl",
+  "run_command": "kedro run --to-outputs=test_model",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 200,
+    "columns": 23,
+    "file_size": 37226
+  }
+}

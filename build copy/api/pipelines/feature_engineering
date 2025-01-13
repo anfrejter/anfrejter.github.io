@@ -1,0 +1,595 @@
+{
+  "nodes": [
+    {
+      "id": "64b583b0",
+      "name": "train_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda",
+        "split_data",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering",
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 22,
+        "file_size": 111418
+      }
+    },
+    {
+      "id": "4f20c649",
+      "name": "test_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering",
+        "split_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "primary",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 22,
+        "file_size": 30365
+      }
+    },
+    {
+      "id": "d807a961",
+      "name": "check_outliers_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "fd5ba886",
+      "name": "numerical_transform_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "parameters": {
+        "num_transform": {
+          "normalize": [
+            "HRV"
+          ],
+          "standardize": [
+            "GSR",
+            "Oxygen_Saturation",
+            "Heart_Rate",
+            "Ambient_Noise",
+            "Respiration_Rate",
+            "Skin_Temp",
+            "Focus_Duration",
+            "Age",
+            "EEG_Power_Bands_D",
+            "EEG_Power_Bands_A",
+            "EEG_Power_Bands_B",
+            "Blood_Pressure_Systolic",
+            "Blood_Pressure_Diastolic"
+          ],
+          "winsorize": [
+            null
+          ]
+        }
+      }
+    },
+    {
+      "id": "e45b062c",
+      "name": "params:num_transform",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "1f56aa7e",
+      "name": "processed_num_train",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 22,
+        "file_size": 111418
+      }
+    },
+    {
+      "id": "7a02fc22",
+      "name": "processed_num_test",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 22,
+        "file_size": 30365
+      }
+    },
+    {
+      "id": "b6d51e73",
+      "name": "categorical_transform_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "parameters": {
+        "cat_transform": {
+          "onehot": [
+            "Gender"
+          ],
+          "catboost": [
+            "Study_Major",
+            "Psychological_State",
+            "Task_Type"
+          ],
+          "ordinal": [
+            "Cognitive_Load",
+            "Educational_Level"
+          ],
+          "target": [
+            "Mood_State"
+          ]
+        },
+        "ordinal_order": {
+          "Cognitive_Load": [
+            "Low",
+            "Moderate",
+            "High"
+          ],
+          "Educational_Level": [
+            "High School",
+            "Undergraduate",
+            "Postgraduate"
+          ]
+        }
+      }
+    },
+    {
+      "id": "a049c996",
+      "name": "params:cat_transform",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "2d5a9f0e",
+      "name": "params:ordinal_order",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "38215985",
+      "name": "processed_cat_train",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 24,
+        "file_size": 150076
+      }
+    },
+    {
+      "id": "755776fa",
+      "name": "processed_cat_test",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 24,
+        "file_size": 39056
+      }
+    },
+    {
+      "id": "6f18bb16",
+      "name": "drop_columns_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "parameters": {
+        "col_drop": [
+          "Time"
+        ]
+      }
+    },
+    {
+      "id": "d28b57b4",
+      "name": "params:col_drop",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "89fcf623",
+      "name": "final_train_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering",
+        "feature_selection"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering",
+        "feature_selection"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 23,
+        "file_size": 143445
+      }
+    },
+    {
+      "id": "8c88dc95",
+      "name": "final_test_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "feature_engineering",
+        "feature_selection"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering",
+        "feature_selection"
+      ],
+      "layer": "feature",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 23,
+        "file_size": 37226
+      }
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering",
+      "tags": [],
+      "pipelines": [
+        "feature_engineering"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "fd5ba886",
+      "target": "1f56aa7e"
+    },
+    {
+      "source": "6f18bb16",
+      "target": "89fcf623"
+    },
+    {
+      "source": "feature_engineering",
+      "target": "8c88dc95"
+    },
+    {
+      "source": "e45b062c",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "64b583b0",
+      "target": "d807a961"
+    },
+    {
+      "source": "4f20c649",
+      "target": "fd5ba886"
+    },
+    {
+      "source": "a049c996",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "feature_engineering",
+      "target": "89fcf623"
+    },
+    {
+      "source": "2d5a9f0e",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "e45b062c",
+      "target": "fd5ba886"
+    },
+    {
+      "source": "d28b57b4",
+      "target": "6f18bb16"
+    },
+    {
+      "source": "b6d51e73",
+      "target": "38215985"
+    },
+    {
+      "source": "755776fa",
+      "target": "6f18bb16"
+    },
+    {
+      "source": "7a02fc22",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "64b583b0",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "38215985",
+      "target": "6f18bb16"
+    },
+    {
+      "source": "1f56aa7e",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "a049c996",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "fd5ba886",
+      "target": "7a02fc22"
+    },
+    {
+      "source": "64b583b0",
+      "target": "fd5ba886"
+    },
+    {
+      "source": "b6d51e73",
+      "target": "755776fa"
+    },
+    {
+      "source": "2d5a9f0e",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "6f18bb16",
+      "target": "8c88dc95"
+    },
+    {
+      "source": "d28b57b4",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "4f20c649",
+      "target": "feature_engineering"
+    }
+  ],
+  "layers": [
+    "primary",
+    "hyperparameter_tuning",
+    "initial_model",
+    "intermediate",
+    "model",
+    "model_output",
+    "raw",
+    "feature"
+  ],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "eda",
+      "name": "eda"
+    },
+    {
+      "id": "feature_selection",
+      "name": "feature_selection"
+    },
+    {
+      "id": "modeling",
+      "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "preprocess_data",
+      "name": "preprocess_data"
+    },
+    {
+      "id": "split_data",
+      "name": "split_data"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "a049c996",
+          "type": "parameters"
+        },
+        {
+          "id": "89fcf623",
+          "type": "data"
+        },
+        {
+          "id": "4f20c649",
+          "type": "data"
+        },
+        {
+          "id": "8c88dc95",
+          "type": "data"
+        },
+        {
+          "id": "2d5a9f0e",
+          "type": "parameters"
+        },
+        {
+          "id": "64b583b0",
+          "type": "data"
+        },
+        {
+          "id": "e45b062c",
+          "type": "parameters"
+        },
+        {
+          "id": "d28b57b4",
+          "type": "parameters"
+        },
+        {
+          "id": "feature_engineering",
+          "type": "modularPipeline"
+        }
+      ]
+    },
+    "feature_engineering": {
+      "id": "feature_engineering",
+      "name": "feature_engineering",
+      "inputs": [
+        "4f20c649",
+        "64b583b0",
+        "a049c996",
+        "2d5a9f0e",
+        "e45b062c",
+        "d28b57b4"
+      ],
+      "outputs": [
+        "89fcf623",
+        "8c88dc95"
+      ],
+      "children": [
+        {
+          "id": "b6d51e73",
+          "type": "task"
+        },
+        {
+          "id": "1f56aa7e",
+          "type": "data"
+        },
+        {
+          "id": "38215985",
+          "type": "data"
+        },
+        {
+          "id": "6f18bb16",
+          "type": "task"
+        },
+        {
+          "id": "d807a961",
+          "type": "task"
+        },
+        {
+          "id": "fd5ba886",
+          "type": "task"
+        },
+        {
+          "id": "755776fa",
+          "type": "data"
+        },
+        {
+          "id": "7a02fc22",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "feature_engineering"
+}
