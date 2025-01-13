@@ -1,0 +1,24 @@
+{
+  "columns": [
+    "HRV",
+    "Ambient_Noise",
+    "Cognitive_Load",
+    "Skin_Temp",
+    "Focus_Duration",
+    "Task_Type",
+    "Age",
+    "Educational_Level",
+    "Study_Major",
+    "EEG_Power_Bands_A",
+    "EEG_Power_Bands_B",
+    "Blood_Pressure_Systolic",
+    "Gender_Female",
+    "Gender_Male",
+    "Gender_Other"
+  ],
+  "criteria": {
+    "method": "backward",
+    "n_vars": 15,
+    "kwarg": "GBM"
+  }
+}
