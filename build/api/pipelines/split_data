@@ -6,8 +6,8 @@
       "tags": [],
       "pipelines": [
         "preprocess_data",
-        "split_data",
         "__default__",
+        "split_data",
         "eda"
       ],
       "type": "data",
@@ -60,15 +60,15 @@
       "name": "train_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "split_data",
         "__default__",
-        "eda"
+        "split_data",
+        "eda",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "plotting2"
+        "plotting2",
+        "feature_engineering"
       ],
       "layer": "primary",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -83,9 +83,9 @@
       "name": "test_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
         "__default__",
-        "split_data"
+        "split_data",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -106,16 +106,16 @@
       "target": "64b583b0"
     },
     {
-      "source": "9f6d7645",
-      "target": "4f20c649"
-    },
-    {
       "source": "22eec376",
       "target": "9f6d7645"
     },
     {
       "source": "4aa6555d",
       "target": "9f6d7645"
+    },
+    {
+      "source": "9f6d7645",
+      "target": "4f20c649"
     }
   ],
   "layers": [
@@ -139,16 +139,16 @@
       "name": "eda"
     },
     {
-      "id": "feature_engineering",
-      "name": "feature_engineering"
-    },
-    {
       "id": "feature_selection",
       "name": "feature_selection"
     },
     {
       "id": "modeling",
       "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
     },
     {
       "id": "preprocess_data",
@@ -167,8 +167,8 @@
       "outputs": [],
       "children": [
         {
-          "id": "9f6d7645",
-          "type": "task"
+          "id": "22eec376",
+          "type": "data"
         },
         {
           "id": "4aa6555d",
@@ -179,15 +179,15 @@
           "type": "parameters"
         },
         {
-          "id": "22eec376",
+          "id": "4f20c649",
           "type": "data"
+        },
+        {
+          "id": "9f6d7645",
+          "type": "task"
         },
         {
           "id": "64b583b0",
-          "type": "data"
-        },
-        {
-          "id": "4f20c649",
           "type": "data"
         }
       ]

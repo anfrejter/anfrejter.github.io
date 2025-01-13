@@ -83,8 +83,8 @@
       "tags": [],
       "pipelines": [
         "preprocess_data",
-        "split_data",
         "__default__",
+        "split_data",
         "eda"
       ],
       "type": "data",
@@ -102,7 +102,7 @@
   ],
   "edges": [
     {
-      "source": "7c58d8e6",
+      "source": "5f56f859",
       "target": "d4c33eb7"
     },
     {
@@ -110,7 +110,7 @@
       "target": "4aa6555d"
     },
     {
-      "source": "5f56f859",
+      "source": "7c58d8e6",
       "target": "d4c33eb7"
     }
   ],
@@ -135,16 +135,16 @@
       "name": "eda"
     },
     {
-      "id": "feature_engineering",
-      "name": "feature_engineering"
-    },
-    {
       "id": "feature_selection",
       "name": "feature_selection"
     },
     {
       "id": "modeling",
       "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
     },
     {
       "id": "preprocess_data",
@@ -163,10 +163,6 @@
       "outputs": [],
       "children": [
         {
-          "id": "7c58d8e6",
-          "type": "data"
-        },
-        {
           "id": "d4c33eb7",
           "type": "task"
         },
@@ -176,10 +172,14 @@
         },
         {
           "id": "5f56f859",
-          "type": "parameters"
+          "type": "data"
         },
         {
           "id": "5f56f859",
+          "type": "parameters"
+        },
+        {
+          "id": "7c58d8e6",
           "type": "data"
         }
       ]

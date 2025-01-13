@@ -1,6 +1,6 @@
 {
   "code": "def process_cat(train_df, test_df, params, params_ordinal):\n    \"\"\"\n    Processes categorical features in the test and train dataframes \n    based on specified parameters.\n    \"\"\"\n    train_df = train_df.reset_index(drop=True)\n    test_df = test_df.reset_index(drop=True)\n\n    for column in [x for x in train_df.columns if train_df[x].dtype in ['category']]:\n        if column in params['onehot']:\n            train_df, test_df = _onehot_encode(train_df, test_df, column)\n        elif column in params['catboost']:\n            train_df, test_df = _cb_encode(train_df, test_df, column, params)\n        elif column in params['ordinal']:\n            train_df, test_df = _ordinal_encode(train_df, test_df, column, params_ordinal)\n        else:\n            if column not in params['target']:\n                logger.warning(\"Categorical olumn %s not in encoding list\", column)\n    return train_df, test_df\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\feature_engineering\\nodes.py",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/feature_engineering/nodes.py",
   "parameters": {
     "cat_transform": {
       "onehot": [

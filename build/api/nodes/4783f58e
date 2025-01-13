@@ -1,6 +1,6 @@
 {
   "type": "tracking.metrics_dataset.MetricsDataset",
-  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/09_tracking/models_evaluation.json",
+  "filepath": "/Users/anfrejter/Documents/GitHub/anfrejter.github.io/data/09_tracking/models_evaluation.json",
   "run_command": "kedro run --to-outputs=models_evaluation",
   "preview": null,
   "preview_type": null,

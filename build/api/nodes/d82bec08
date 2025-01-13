@@ -1,12 +1,12 @@
 {
   "type": "pickle.pickle_dataset.PickleDataset",
-  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/07_model_output/y_test_preds.pkl",
+  "filepath": "/Users/anfrejter/Documents/GitHub/anfrejter.github.io/data/07_model_output/y_test_preds.pkl",
   "run_command": "kedro run --to-outputs=y_test_preds",
   "preview": null,
   "preview_type": null,
   "stats": {
-    "rows": 600,
+    "rows": 800,
     "columns": 6,
-    "file_size": 26971
+    "file_size": 35575
   }
 }

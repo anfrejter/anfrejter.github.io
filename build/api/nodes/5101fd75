@@ -1,11 +1,11 @@
 {
-  "code": "def get_initial_score(train, params):\n    target_column = params['target']\n    scoring_method = params['scoring']\n    result = {}\n    models = {\n        'xgb': XGBClassifier(objective='multi:softprob', num_class=4),\n        'lr': LogisticRegression(),\n        'lgbm': LGBMClassifier(objective='multiclass', num_class=4)\n    }\n    x_train = train.drop(columns=[target_column])\n    y_train = train[target_column].cat.codes\n    for name, model in models.items():\n        res = cross_val_score(model, x_train, y_train,\n                        scoring=scoring_method, cv=4)\n        result[name] = res.mean()\n    return result\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\modeling\\nodes.py",
+  "code": "def get_initial_score(train, params):\n    target_column = params['target']\n    scoring_method = params['scoring']\n    result = {}\n    models = {\n        'xgb': XGBClassifier(objective='multi:softprob', num_class=4),\n        'lr': LogisticRegression(),\n        'lgbm': LGBMClassifier(objective='multiclass', num_class=4),\n        'ada': AdaBoostClassifier(DecisionTreeClassifier(max_depth=1))\n    }\n    x_train = train.drop(columns=[target_column])\n    y_train = train[target_column].cat.codes\n    for name, model in models.items():\n        res = cross_val_score(model, x_train, y_train,\n                        scoring=scoring_method, cv=4)\n        result[name] = res.mean()\n    return result\n",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/modeling/nodes.py",
   "parameters": {
     "params": {
       "target": "Mood_State",
       "scoring": "roc_auc_ovr",
-      "n_trials": 30
+      "n_trials": 500
     }
   },
   "run_command": "kedro run --to-nodes='hyperparameter_tuning.get_initial_score_node'",

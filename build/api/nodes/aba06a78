@@ -1,6 +1,6 @@
 {
   "type": "plotly.plotly_dataset.PlotlyDataset",
-  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/03_primary/plot_Mood_State_by_Gender_distribution_px.json",
+  "filepath": "/Users/anfrejter/Documents/GitHub/anfrejter.github.io/data/03_primary/plot_Mood_State_by_Gender_distribution_px.json",
   "run_command": "kedro run --to-outputs=plot_Mood_State_by_Gender_distribution_px",
   "preview": null,
   "preview_type": null,

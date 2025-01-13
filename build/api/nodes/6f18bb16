@@ -1,6 +1,6 @@
 {
   "code": "def drop_columns(test_df, train_df, columns):\n    \"\"\"\n    Drops the specified columns from the test and train data.\n    \"\"\"\n    return test_df.drop(columns=columns), train_df.drop(columns=columns)\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\feature_engineering\\nodes.py",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/feature_engineering/nodes.py",
   "parameters": {
     "col_drop": [
       "Time"

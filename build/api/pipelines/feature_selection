@@ -5,14 +5,14 @@
       "name": "final_train_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
+        "__default__",
         "feature_selection",
-        "__default__"
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "feature_selection"
+        "feature_selection",
+        "feature_engineering"
       ],
       "layer": "feature",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -27,14 +27,14 @@
       "name": "final_test_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
+        "__default__",
         "feature_selection",
-        "__default__"
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "feature_selection"
+        "feature_selection",
+        "feature_engineering"
       ],
       "layer": "feature",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -49,8 +49,8 @@
       "name": "get_feat_rank_corr_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -59,7 +59,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -70,8 +70,8 @@
       "name": "params:fs_params",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -84,8 +84,8 @@
       "name": "feat_rank_corr_results",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -96,7 +96,7 @@
       "stats": {
         "rows": 22,
         "columns": 3,
-        "file_size": 912
+        "file_size": 866
       }
     },
     {
@@ -104,8 +104,8 @@
       "name": "get_feat_rank_stat_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -114,7 +114,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -125,8 +125,8 @@
       "name": "feat_rank_stat_results",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -137,7 +137,7 @@
       "stats": {
         "rows": 22,
         "columns": 5,
-        "file_size": 1371
+        "file_size": 1321
       }
     },
     {
@@ -145,8 +145,8 @@
       "name": "select_features_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -155,7 +155,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -166,21 +166,23 @@
       "name": "train_model",
       "tags": [],
       "pipelines": [
-        "feature_selection",
         "__default__",
+        "feature_selection",
+        "eda",
         "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
         "hyperparameter_tuning",
-        "feature_selection"
+        "feature_selection",
+        "plotting_evaluaton"
       ],
       "layer": "model",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
       "stats": {
         "rows": 800,
         "columns": 16,
-        "file_size": 98431
+        "file_size": 98462
       }
     },
     {
@@ -188,8 +190,8 @@
       "name": "test_model",
       "tags": [],
       "pipelines": [
-        "feature_selection",
         "__default__",
+        "feature_selection",
         "modeling"
       ],
       "type": "data",
@@ -201,7 +203,7 @@
       "stats": {
         "rows": 200,
         "columns": 16,
-        "file_size": 25813
+        "file_size": 25843
       }
     },
     {
@@ -209,8 +211,8 @@
       "name": "selected_features",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -236,47 +238,19 @@
   ],
   "edges": [
     {
-      "source": "89fcf623",
-      "target": "5f2bec39"
-    },
-    {
-      "source": "89fcf623",
-      "target": "feature_selection"
-    },
-    {
-      "source": "99a96059",
-      "target": "5f9ae5f8"
-    },
-    {
-      "source": "5f2bec39",
-      "target": "5a416e00"
-    },
-    {
-      "source": "89fcf623",
-      "target": "96b75a62"
-    },
-    {
-      "source": "96b75a62",
-      "target": "18604688"
-    },
-    {
-      "source": "96b75a62",
-      "target": "f23452a4"
-    },
-    {
       "source": "9b361b76",
       "target": "5f2bec39"
     },
     {
-      "source": "89fcf623",
-      "target": "99a96059"
-    },
-    {
-      "source": "96b75a62",
+      "source": "feature_selection",
       "target": "f8802a59"
     },
     {
-      "source": "9b361b76",
+      "source": "feature_selection",
+      "target": "18604688"
+    },
+    {
+      "source": "8c88dc95",
       "target": "feature_selection"
     },
     {
@@ -284,36 +258,64 @@
       "target": "96b75a62"
     },
     {
-      "source": "8c88dc95",
-      "target": "feature_selection"
+      "source": "99a96059",
+      "target": "5f9ae5f8"
     },
     {
-      "source": "5f9ae5f8",
-      "target": "96b75a62"
-    },
-    {
-      "source": "9b361b76",
-      "target": "96b75a62"
-    },
-    {
-      "source": "feature_selection",
-      "target": "18604688"
+      "source": "96b75a62",
+      "target": "f8802a59"
     },
     {
       "source": "feature_selection",
       "target": "f23452a4"
     },
     {
+      "source": "96b75a62",
+      "target": "18604688"
+    },
+    {
+      "source": "89fcf623",
+      "target": "96b75a62"
+    },
+    {
+      "source": "96b75a62",
+      "target": "f23452a4"
+    },
+    {
+      "source": "9b361b76",
+      "target": "96b75a62"
+    },
+    {
+      "source": "5f2bec39",
+      "target": "5a416e00"
+    },
+    {
+      "source": "5f9ae5f8",
+      "target": "96b75a62"
+    },
+    {
+      "source": "89fcf623",
+      "target": "feature_selection"
+    },
+    {
       "source": "8c88dc95",
       "target": "96b75a62"
     },
     {
-      "source": "9b361b76",
+      "source": "89fcf623",
       "target": "99a96059"
     },
     {
-      "source": "feature_selection",
-      "target": "f8802a59"
+      "source": "9b361b76",
+      "target": "feature_selection"
+    },
+    {
+      "source": "89fcf623",
+      "target": "5f2bec39"
+    },
+    {
+      "source": "9b361b76",
+      "target": "99a96059"
     }
   ],
   "layers": [
@@ -337,16 +339,16 @@
       "name": "eda"
     },
     {
-      "id": "feature_engineering",
-      "name": "feature_engineering"
-    },
-    {
       "id": "feature_selection",
       "name": "feature_selection"
     },
     {
       "id": "modeling",
       "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
     },
     {
       "id": "preprocess_data",
@@ -365,7 +367,19 @@
       "outputs": [],
       "children": [
         {
+          "id": "89fcf623",
+          "type": "data"
+        },
+        {
           "id": "f8802a59",
+          "type": "data"
+        },
+        {
+          "id": "18604688",
+          "type": "data"
+        },
+        {
+          "id": "8c88dc95",
           "type": "data"
         },
         {
@@ -373,20 +387,8 @@
           "type": "parameters"
         },
         {
-          "id": "18604688",
-          "type": "data"
-        },
-        {
           "id": "feature_selection",
           "type": "modularPipeline"
-        },
-        {
-          "id": "89fcf623",
-          "type": "data"
-        },
-        {
-          "id": "8c88dc95",
-          "type": "data"
         },
         {
           "id": "f23452a4",
@@ -398,16 +400,28 @@
       "id": "feature_selection",
       "name": "feature_selection",
       "inputs": [
-        "8c88dc95",
+        "89fcf623",
         "9b361b76",
-        "89fcf623"
+        "8c88dc95"
       ],
       "outputs": [
         "f23452a4",
-        "f8802a59",
-        "18604688"
+        "18604688",
+        "f8802a59"
       ],
       "children": [
+        {
+          "id": "96b75a62",
+          "type": "task"
+        },
+        {
+          "id": "99a96059",
+          "type": "task"
+        },
+        {
+          "id": "5f9ae5f8",
+          "type": "data"
+        },
         {
           "id": "5f2bec39",
           "type": "task"
@@ -415,18 +429,6 @@
         {
           "id": "5a416e00",
           "type": "data"
-        },
-        {
-          "id": "5f9ae5f8",
-          "type": "data"
-        },
-        {
-          "id": "99a96059",
-          "type": "task"
-        },
-        {
-          "id": "96b75a62",
-          "type": "task"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "type": "pickle.pickle_dataset.PickleDataset",
-  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/04_feature/processed_cat_test.pkl",
+  "filepath": "/Users/anfrejter/Documents/GitHub/anfrejter.github.io/data/04_feature/processed_cat_test.pkl",
   "run_command": "kedro run --to-outputs=processed_cat_test",
   "preview": null,
   "preview_type": null,

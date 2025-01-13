@@ -1,6 +1,6 @@
 {
   "code": "def plot_Age_vs_Mood_State(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable \n    \"\"\"\n    return data[['Mood_State','Age']]\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\eda\\nodes.py",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/eda/nodes.py",
   "parameters": {},
   "run_command": "kedro run --to-nodes='plotting2.plot_Age_vs_Mood_State'",
   "inputs": [

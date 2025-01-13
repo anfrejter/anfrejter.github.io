@@ -1,6 +1,6 @@
 {
   "type": "pandas.csv_dataset.CSVDataset",
-  "filepath": "C:/Users/anfre/Desktop/repos/psychological-state-classification/data/01_raw/psychological_state_dataset.csv",
+  "filepath": "/Users/anfrejter/Documents/GitHub/anfrejter.github.io/data/01_raw/psychological_state_dataset.csv",
   "run_command": null,
   "preview": null,
   "preview_type": null,

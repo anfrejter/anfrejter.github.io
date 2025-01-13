@@ -2,7 +2,7 @@
   "parameters": {
     "fs_params": {
       "target": "Mood_State",
-      "n_vars": "all",
+      "n_vars": 15,
       "method": "backward",
       "kwarg": "GBM"
     }

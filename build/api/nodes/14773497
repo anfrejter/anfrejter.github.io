@@ -1,0 +1,13 @@
+{
+  "code": "def plot_feature_importance_xgb_g(train, xgb_params):\n    \"\"\"\n    Plot the feature importance of the target variable \n    \"\"\"\n    xgb = XGBClassifier(**xgb_params)\n    xgb.fit(train.drop(columns=['Mood_State']), train['Mood_State'].cat.codes)\n    \n    booster = xgb.get_booster()\n    gain_importance = booster.get_score(importance_type='gain')\n    df = (pd.DataFrame(list(gain_importance.items()), columns=['feature', 'importance'])\n                .sort_values(by='importance', ascending=False))\n\n    return df\n",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/eda/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='plotting_evaluaton.plot_fi_xgb_g_px'",
+  "inputs": [
+    "train_model",
+    "XGB_optuna_params_"
+  ],
+  "outputs": [
+    "plot_fi_xgb_g_px"
+  ]
+}

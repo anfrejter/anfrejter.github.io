@@ -83,8 +83,8 @@
       "tags": [],
       "pipelines": [
         "preprocess_data",
-        "split_data",
         "__default__",
+        "split_data",
         "eda"
       ],
       "type": "data",
@@ -266,7 +266,7 @@
       "stats": {
         "rows": 1000,
         "columns": 1,
-        "file_size": 25553
+        "file_size": 25658
       }
     },
     {
@@ -439,15 +439,15 @@
       "name": "train_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "split_data",
         "__default__",
-        "eda"
+        "split_data",
+        "eda",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "plotting2"
+        "plotting2",
+        "feature_engineering"
       ],
       "layer": "primary",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -462,9 +462,9 @@
       "name": "test_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
         "__default__",
-        "split_data"
+        "split_data",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -483,8 +483,8 @@
       "name": "check_outliers_node",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -497,8 +497,8 @@
       "name": "numerical_transform_node",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -535,8 +535,8 @@
       "name": "params:num_transform",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -549,8 +549,8 @@
       "name": "processed_num_train",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -569,8 +569,8 @@
       "name": "processed_num_test",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -649,7 +649,7 @@
       "stats": {
         "rows": 800,
         "columns": 2,
-        "file_size": 24327
+        "file_size": 24408
       }
     },
     {
@@ -717,7 +717,7 @@
       "stats": {
         "rows": 800,
         "columns": 2,
-        "file_size": 28813
+        "file_size": 28836
       }
     },
     {
@@ -759,8 +759,8 @@
       "name": "categorical_transform_node",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -803,8 +803,8 @@
       "name": "params:cat_transform",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -817,8 +817,8 @@
       "name": "params:ordinal_order",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -831,8 +831,8 @@
       "name": "processed_cat_train",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -851,8 +851,8 @@
       "name": "processed_cat_test",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -871,8 +871,8 @@
       "name": "drop_columns_node",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -889,8 +889,8 @@
       "name": "params:col_drop",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
-        "__default__"
+        "__default__",
+        "feature_engineering"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -903,14 +903,14 @@
       "name": "final_train_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
+        "__default__",
         "feature_selection",
-        "__default__"
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "feature_selection"
+        "feature_selection",
+        "feature_engineering"
       ],
       "layer": "feature",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -925,14 +925,14 @@
       "name": "final_test_data",
       "tags": [],
       "pipelines": [
-        "feature_engineering",
+        "__default__",
         "feature_selection",
-        "__default__"
+        "feature_engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "feature_selection"
+        "feature_selection",
+        "feature_engineering"
       ],
       "layer": "feature",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
@@ -947,8 +947,8 @@
       "name": "get_feat_rank_corr_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -957,7 +957,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -968,8 +968,8 @@
       "name": "params:fs_params",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -982,8 +982,8 @@
       "name": "feat_rank_corr_results",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -994,7 +994,7 @@
       "stats": {
         "rows": 22,
         "columns": 3,
-        "file_size": 912
+        "file_size": 866
       }
     },
     {
@@ -1002,8 +1002,8 @@
       "name": "get_feat_rank_stat_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1012,7 +1012,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -1023,8 +1023,8 @@
       "name": "feat_rank_stat_results",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1035,7 +1035,7 @@
       "stats": {
         "rows": 22,
         "columns": 5,
-        "file_size": 1371
+        "file_size": 1321
       }
     },
     {
@@ -1043,8 +1043,8 @@
       "name": "select_features_node",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1053,7 +1053,7 @@
       "parameters": {
         "fs_params": {
           "target": "Mood_State",
-          "n_vars": "all",
+          "n_vars": 15,
           "method": "backward",
           "kwarg": "GBM"
         }
@@ -1064,21 +1064,23 @@
       "name": "train_model",
       "tags": [],
       "pipelines": [
-        "feature_selection",
         "__default__",
+        "feature_selection",
+        "eda",
         "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
         "hyperparameter_tuning",
-        "feature_selection"
+        "feature_selection",
+        "plotting_evaluaton"
       ],
       "layer": "model",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
       "stats": {
         "rows": 800,
         "columns": 16,
-        "file_size": 98431
+        "file_size": 98462
       }
     },
     {
@@ -1086,8 +1088,8 @@
       "name": "test_model",
       "tags": [],
       "pipelines": [
-        "feature_selection",
         "__default__",
+        "feature_selection",
         "modeling"
       ],
       "type": "data",
@@ -1099,7 +1101,7 @@
       "stats": {
         "rows": 200,
         "columns": 16,
-        "file_size": 25813
+        "file_size": 25843
       }
     },
     {
@@ -1107,8 +1109,8 @@
       "name": "selected_features",
       "tags": [],
       "pipelines": [
-        "feature_selection",
-        "__default__"
+        "__default__",
+        "feature_selection"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1123,8 +1125,8 @@
       "name": "get_initial_score_node",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1134,7 +1136,7 @@
         "params": {
           "target": "Mood_State",
           "scoring": "roc_auc_ovr",
-          "n_trials": 30
+          "n_trials": 500
         }
       }
     },
@@ -1143,8 +1145,8 @@
       "name": "params:params",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "parameters",
       "modular_pipelines": null,
@@ -1157,8 +1159,8 @@
       "name": "initial_cv_score",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1169,12 +1171,12 @@
       "stats": null
     },
     {
-      "id": "969c9482",
-      "name": "optimize_lgbm_hyperparams_node",
+      "id": "4f1deb6c",
+      "name": "optimize_ada_hyperparams_node",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1184,7 +1186,59 @@
         "params": {
           "target": "Mood_State",
           "scoring": "roc_auc_ovr",
-          "n_trials": 30
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "ce8bbad1",
+      "name": "ADA_optuna_params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "tracking.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "180b6027",
+      "name": "ADA_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "969c9482",
+      "name": "optimize_lgbm_hyperparams_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
         }
       }
     },
@@ -1193,8 +1247,8 @@
       "name": "LGBM_optuna_params",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1209,8 +1263,8 @@
       "name": "LGBM_optuna_params_",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1225,8 +1279,8 @@
       "name": "optimize_lr_hyperparams_node",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1236,7 +1290,7 @@
         "params": {
           "target": "Mood_State",
           "scoring": "roc_auc_ovr",
-          "n_trials": 30
+          "n_trials": 500
         }
       }
     },
@@ -1245,8 +1299,8 @@
       "name": "LR_optuna_params",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1261,8 +1315,8 @@
       "name": "LR_optuna_params_",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1277,8 +1331,8 @@
       "name": "optimize_xgb_hyperparams_node",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "task",
       "modular_pipelines": [
@@ -1288,7 +1342,7 @@
         "params": {
           "target": "Mood_State",
           "scoring": "roc_auc_ovr",
-          "n_trials": 30
+          "n_trials": 500
         }
       }
     },
@@ -1297,8 +1351,8 @@
       "name": "XGB_optuna_params",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1313,24 +1367,26 @@
       "name": "XGB_optuna_params_",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "eda",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
-        "hyperparameter_tuning"
+        "hyperparameter_tuning",
+        "plotting_evaluaton"
       ],
       "layer": "hyperparameter_tuning",
       "dataset_type": "json.json_dataset.JSONDataset",
       "stats": null
     },
     {
-      "id": "ba26bc34",
+      "id": "38d7350c",
       "name": "eval_best_models_node",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "task",
       "modular_pipelines": null,
@@ -1338,7 +1394,7 @@
         "params": {
           "target": "Mood_State",
           "scoring": "roc_auc_ovr",
-          "n_trials": 30
+          "n_trials": 500
         }
       }
     },
@@ -1347,8 +1403,8 @@
       "name": "models_evaluation",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": null,
@@ -1361,17 +1417,17 @@
       "name": "y_train_preds",
       "tags": [],
       "pipelines": [
-        "modeling",
-        "__default__"
+        "__default__",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": null,
       "layer": "model_output",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
       "stats": {
-        "rows": 2400,
+        "rows": 3200,
         "columns": 6,
-        "file_size": 104384
+        "file_size": 138790
       }
     },
     {
@@ -1379,9 +1435,9 @@
       "name": "y_test_preds",
       "tags": [],
       "pipelines": [
-        "modeling",
         "__default__",
-        "eda"
+        "eda",
+        "modeling"
       ],
       "type": "data",
       "modular_pipelines": [
@@ -1390,9 +1446,111 @@
       "layer": "model_output",
       "dataset_type": "pickle.pickle_dataset.PickleDataset",
       "stats": {
-        "rows": 600,
+        "rows": 800,
         "columns": 6,
-        "file_size": 26971
+        "file_size": 35575
+      }
+    },
+    {
+      "id": "14773497",
+      "name": "plot_fi_xgb_g_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "c76d575e",
+      "name": "plot_fi_xgb_g_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 15,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "36169aee",
+      "name": "plot_fi_xgb_w_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "99850b78",
+      "name": "plot_fi_xgb_w_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 15,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "9180b3c4",
+      "name": "plot_confusion_matrix_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "f171f570",
+      "name": "plot_confusion_matrix_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 2,
+        "file_size": 288
       }
     },
     {
@@ -1426,7 +1584,7 @@
       "stats": {
         "rows": 200,
         "columns": 2,
-        "file_size": 4096
+        "file_size": 288
       }
     },
     {
@@ -1460,7 +1618,7 @@
       "stats": {
         "rows": 200,
         "columns": 2,
-        "file_size": 4096
+        "file_size": 288
       }
     },
     {
@@ -1494,7 +1652,41 @@
       "stats": {
         "rows": 200,
         "columns": 2,
-        "file_size": 4096
+        "file_size": 288
+      }
+    },
+    {
+      "id": "0361cdb4",
+      "name": "plot_roc_auc_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "a7e07328",
+      "name": "plot_roc_auc_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 54,
+        "columns": 5,
+        "file_size": 288
       }
     },
     {
@@ -1526,9 +1718,9 @@
       "layer": "model_output",
       "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
       "stats": {
-        "rows": 314,
+        "rows": 310,
         "columns": 5,
-        "file_size": 4096
+        "file_size": 288
       }
     },
     {
@@ -1560,9 +1752,9 @@
       "layer": "model_output",
       "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
       "stats": {
-        "rows": 298,
+        "rows": 320,
         "columns": 5,
-        "file_size": 4096
+        "file_size": 288
       }
     },
     {
@@ -1594,9 +1786,9 @@
       "layer": "model_output",
       "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
       "stats": {
-        "rows": 300,
+        "rows": 317,
         "columns": 5,
-        "file_size": 4096
+        "file_size": 288
       }
     },
     {
@@ -1680,444 +1872,184 @@
   ],
   "edges": [
     {
-      "source": "5101fd75",
-      "target": "1a149276"
-    },
-    {
-      "source": "a829e896",
-      "target": "43241260"
-    },
-    {
-      "source": "d28b57b4",
-      "target": "6f18bb16"
-    },
-    {
-      "source": "feature_engineering",
-      "target": "89fcf623"
-    },
-    {
-      "source": "plotting1",
-      "target": "0bd85fc8"
-    },
-    {
-      "source": "64b583b0",
-      "target": "49edcade"
-    },
-    {
-      "source": "37513a45",
-      "target": "a4876725"
-    },
-    {
-      "source": "d4c33eb7",
-      "target": "4aa6555d"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "5c931cfd"
-    },
-    {
-      "source": "5f2bec39",
-      "target": "5a416e00"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "aa42d42a"
-    },
-    {
-      "source": "f23452a4",
-      "target": "37513a45"
-    },
-    {
-      "source": "43241260",
-      "target": "83059ae4"
-    },
-    {
-      "source": "plotting1",
-      "target": "41a1edf4"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "e86d3437"
-    },
-    {
-      "source": "96b75a62",
-      "target": "f23452a4"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "57a64140"
-    },
-    {
-      "source": "4f20c649",
-      "target": "fd5ba886"
-    },
-    {
-      "source": "57a64140",
-      "target": "126f418a"
-    },
-    {
-      "source": "0fdd22ec",
-      "target": "eec4c56b"
-    },
-    {
-      "source": "af82e297",
-      "target": "9b6e7ea8"
-    },
-    {
-      "source": "89fcf623",
-      "target": "99a96059"
-    },
-    {
-      "source": "f23452a4",
-      "target": "5101fd75"
-    },
-    {
-      "source": "a829e896",
-      "target": "969c9482"
-    },
-    {
-      "source": "plotting2",
-      "target": "33c13c26"
-    },
-    {
-      "source": "7bf93589",
-      "target": "2ef0dfa6"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "a8da2b04"
-    },
-    {
-      "source": "a5c1933d",
-      "target": "0bd85fc8"
-    },
-    {
-      "source": "64b583b0",
-      "target": "af82e297"
-    },
-    {
-      "source": "969c9482",
-      "target": "e86d3437"
-    },
-    {
-      "source": "64b583b0",
-      "target": "plotting2"
-    },
-    {
-      "source": "e45b062c",
-      "target": "feature_engineering"
-    },
-    {
-      "source": "c5660a34",
-      "target": "ba26bc34"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "73f6418b"
-    },
-    {
-      "source": "a8da2b04",
-      "target": "e18f43fb"
-    },
-    {
-      "source": "plotting1",
-      "target": "9859bf01"
-    },
-    {
-      "source": "e54ed220",
-      "target": "73f6418b"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "7bf93589"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "f2d96b62"
-    },
-    {
-      "source": "5f9ae5f8",
-      "target": "96b75a62"
-    },
-    {
-      "source": "9b361b76",
-      "target": "96b75a62"
-    },
-    {
-      "source": "755776fa",
-      "target": "6f18bb16"
-    },
-    {
-      "source": "feature_selection",
-      "target": "f23452a4"
-    },
-    {
-      "source": "a049c996",
-      "target": "feature_engineering"
-    },
-    {
-      "source": "64b583b0",
-      "target": "d807a961"
-    },
-    {
-      "source": "43241260",
-      "target": "c5660a34"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "a4876725"
-    },
-    {
-      "source": "a829e896",
-      "target": "hyperparameter_tuning"
-    },
-    {
-      "source": "2d5a9f0e",
-      "target": "feature_engineering"
-    },
-    {
-      "source": "e30e9dd8",
-      "target": "33c13c26"
-    },
-    {
-      "source": "969c9482",
-      "target": "f2d96b62"
-    },
-    {
-      "source": "6f18bb16",
-      "target": "89fcf623"
-    },
-    {
       "source": "f23452a4",
       "target": "43241260"
     },
     {
-      "source": "64b583b0",
-      "target": "e30e9dd8"
-    },
-    {
-      "source": "4f20c649",
-      "target": "feature_engineering"
-    },
-    {
-      "source": "e45b062c",
-      "target": "fd5ba886"
-    },
-    {
-      "source": "d82bec08",
-      "target": "e54ed220"
-    },
-    {
-      "source": "d82bec08",
-      "target": "536a0bdc"
-    },
-    {
-      "source": "plotting1",
-      "target": "9d65c8e5"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "64bd37ea"
+      "source": "f23452a4",
+      "target": "36169aee"
     },
     {
       "source": "hyperparameter_tuning",
-      "target": "099f417c"
-    },
-    {
-      "source": "ba26bc34",
-      "target": "d82bec08"
-    },
-    {
-      "source": "plotting2",
-      "target": "6a1b604e"
-    },
-    {
-      "source": "a4876725",
-      "target": "ba26bc34"
-    },
-    {
-      "source": "2d5a9f0e",
-      "target": "b6d51e73"
-    },
-    {
-      "source": "89fcf623",
-      "target": "96b75a62"
-    },
-    {
-      "source": "9b361b76",
-      "target": "5f2bec39"
-    },
-    {
-      "source": "plotting1",
-      "target": "e18f43fb"
-    },
-    {
-      "source": "plotting1",
-      "target": "eec4c56b"
-    },
-    {
-      "source": "plotting2",
-      "target": "aba06a78"
+      "target": "180b6027"
     },
     {
       "source": "4aa6555d",
       "target": "3286fd3b"
     },
     {
-      "source": "5f56f859",
-      "target": "d4c33eb7"
+      "source": "feature_engineering",
+      "target": "8c88dc95"
     },
     {
-      "source": "9b361b76",
-      "target": "feature_selection"
+      "source": "e45b062c",
+      "target": "fd5ba886"
     },
     {
-      "source": "4aa6555d",
-      "target": "plotting1"
-    },
-    {
-      "source": "5c931cfd",
-      "target": "9d65c8e5"
-    },
-    {
-      "source": "plotting1",
-      "target": "2ef0dfa6"
-    },
-    {
-      "source": "f8802a59",
-      "target": "ba26bc34"
-    },
-    {
-      "source": "d82bec08",
-      "target": "plotting_evaluaton"
-    },
-    {
-      "source": "9f6d7645",
-      "target": "64b583b0"
-    },
-    {
-      "source": "a76e0c6a",
-      "target": "41a1edf4"
-    },
-    {
-      "source": "8c88dc95",
-      "target": "96b75a62"
-    },
-    {
-      "source": "536a0bdc",
-      "target": "515adc75"
-    },
-    {
-      "source": "d82bec08",
-      "target": "fb3bf40e"
-    },
-    {
-      "source": "89fcf623",
-      "target": "5f2bec39"
-    },
-    {
-      "source": "89fcf623",
-      "target": "feature_selection"
-    },
-    {
-      "source": "fb3bf40e",
-      "target": "649b6c33"
-    },
-    {
-      "source": "a049c996",
-      "target": "b6d51e73"
-    },
-    {
-      "source": "99a96059",
-      "target": "5f9ae5f8"
-    },
-    {
-      "source": "64b583b0",
-      "target": "feature_engineering"
-    },
-    {
-      "source": "96b75a62",
-      "target": "18604688"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "515adc75"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "649b6c33"
-    },
-    {
-      "source": "96b75a62",
-      "target": "f8802a59"
+      "source": "af82e297",
+      "target": "9b6e7ea8"
     },
     {
       "source": "f23452a4",
-      "target": "969c9482"
+      "target": "14773497"
     },
     {
-      "source": "a829e896",
-      "target": "ba26bc34"
-    },
-    {
-      "source": "d82bec08",
-      "target": "ad457b79"
-    },
-    {
-      "source": "38215985",
-      "target": "6f18bb16"
-    },
-    {
-      "source": "1f56aa7e",
-      "target": "b6d51e73"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "83059ae4"
-    },
-    {
-      "source": "64b583b0",
-      "target": "fd5ba886"
+      "source": "feature_selection",
+      "target": "18604688"
     },
     {
       "source": "5a416e00",
       "target": "96b75a62"
     },
     {
+      "source": "7903b14e",
+      "target": "6a1b604e"
+    },
+    {
+      "source": "1f56aa7e",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "37513a45",
+      "target": "099f417c"
+    },
+    {
+      "source": "4f20c649",
+      "target": "fd5ba886"
+    },
+    {
+      "source": "a829e896",
+      "target": "hyperparameter_tuning"
+    },
+    {
+      "source": "feature_selection",
+      "target": "f23452a4"
+    },
+    {
+      "source": "2d5a9f0e",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "f23452a4",
+      "target": "plotting_evaluaton"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "c76d575e"
+    },
+    {
+      "source": "5f56f859",
+      "target": "d4c33eb7"
+    },
+    {
+      "source": "a4876725",
+      "target": "38d7350c"
+    },
+    {
+      "source": "9f6d7645",
+      "target": "64b583b0"
+    },
+    {
+      "source": "a049c996",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "d82bec08",
+      "target": "0361cdb4"
+    },
+    {
+      "source": "c5660a34",
+      "target": "36169aee"
+    },
+    {
+      "source": "9b361b76",
+      "target": "96b75a62"
+    },
+    {
+      "source": "a829e896",
+      "target": "969c9482"
+    },
+    {
+      "source": "5f2bec39",
+      "target": "5a416e00"
+    },
+    {
+      "source": "969c9482",
+      "target": "f2d96b62"
+    },
+    {
+      "source": "2d5a9f0e",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "64b583b0",
+      "target": "49edcade"
+    },
+    {
+      "source": "c5660a34",
+      "target": "14773497"
+    },
+    {
+      "source": "a049c996",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "f23452a4",
+      "target": "38d7350c"
+    },
+    {
+      "source": "96f9a385",
+      "target": "9859bf01"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "9f6d7645"
+    },
+    {
+      "source": "a829e896",
+      "target": "4f1deb6c"
+    },
+    {
+      "source": "89fcf623",
+      "target": "5f2bec39"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "a8da2b04"
+    },
+    {
+      "source": "9b361b76",
+      "target": "99a96059"
+    },
+    {
       "source": "4aa6555d",
       "target": "a5c1933d"
     },
     {
-      "source": "8c88dc95",
-      "target": "feature_selection"
-    },
-    {
-      "source": "d82bec08",
-      "target": "11aa7625"
-    },
-    {
-      "source": "feature_selection",
-      "target": "18604688"
-    },
-    {
-      "source": "7a02fc22",
-      "target": "b6d51e73"
-    },
-    {
-      "source": "fd5ba886",
-      "target": "7a02fc22"
+      "source": "5c931cfd",
+      "target": "9d65c8e5"
     },
     {
       "source": "4aa6555d",
-      "target": "96f9a385"
+      "target": "5c931cfd"
     },
     {
-      "source": "4aa6555d",
-      "target": "0fdd22ec"
+      "source": "plotting2",
+      "target": "fd475a1e"
     },
     {
-      "source": "feature_selection",
-      "target": "f8802a59"
+      "source": "c5660a34",
+      "target": "plotting_evaluaton"
     },
     {
       "source": "49edcade",
@@ -2125,151 +2057,503 @@
     },
     {
       "source": "64b583b0",
-      "target": "c80ddd35"
-    },
-    {
-      "source": "ba26bc34",
-      "target": "4783f58e"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "1a149276"
-    },
-    {
-      "source": "f2d96b62",
-      "target": "ba26bc34"
-    },
-    {
-      "source": "f23452a4",
-      "target": "hyperparameter_tuning"
-    },
-    {
-      "source": "11aa7625",
-      "target": "aa42d42a"
-    },
-    {
-      "source": "7903b14e",
-      "target": "6a1b604e"
-    },
-    {
-      "source": "plotting_evaluaton",
-      "target": "488716b6"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "9f6d7645"
-    },
-    {
-      "source": "plotting1",
-      "target": "c6971d85"
-    },
-    {
-      "source": "hyperparameter_tuning",
-      "target": "c5660a34"
-    },
-    {
-      "source": "96f9a385",
-      "target": "9859bf01"
-    },
-    {
-      "source": "a829e896",
-      "target": "37513a45"
-    },
-    {
-      "source": "ad457b79",
-      "target": "64bd37ea"
-    },
-    {
-      "source": "c80ddd35",
-      "target": "fd475a1e"
-    },
-    {
-      "source": "d28b57b4",
       "target": "feature_engineering"
-    },
-    {
-      "source": "b6d51e73",
-      "target": "755776fa"
-    },
-    {
-      "source": "93394f08",
-      "target": "488716b6"
-    },
-    {
-      "source": "a829e896",
-      "target": "5101fd75"
-    },
-    {
-      "source": "37513a45",
-      "target": "099f417c"
-    },
-    {
-      "source": "22eec376",
-      "target": "9f6d7645"
-    },
-    {
-      "source": "4aa6555d",
-      "target": "a76e0c6a"
-    },
-    {
-      "source": "d82bec08",
-      "target": "93394f08"
     },
     {
       "source": "plotting1",
       "target": "126f418a"
     },
     {
-      "source": "9f6d7645",
-      "target": "4f20c649"
+      "source": "4aa6555d",
+      "target": "57a64140"
     },
     {
-      "source": "3286fd3b",
-      "target": "c6971d85"
+      "source": "feature_selection",
+      "target": "f8802a59"
+    },
+    {
+      "source": "536a0bdc",
+      "target": "515adc75"
+    },
+    {
+      "source": "4f1deb6c",
+      "target": "180b6027"
+    },
+    {
+      "source": "8c88dc95",
+      "target": "feature_selection"
+    },
+    {
+      "source": "d82bec08",
+      "target": "93394f08"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "99850b78"
     },
     {
       "source": "fd5ba886",
       "target": "1f56aa7e"
     },
     {
-      "source": "f23452a4",
-      "target": "ba26bc34"
+      "source": "plotting2",
+      "target": "aba06a78"
     },
     {
-      "source": "64b583b0",
-      "target": "7903b14e"
+      "source": "c5660a34",
+      "target": "38d7350c"
+    },
+    {
+      "source": "a8da2b04",
+      "target": "e18f43fb"
+    },
+    {
+      "source": "7bf93589",
+      "target": "2ef0dfa6"
+    },
+    {
+      "source": "96b75a62",
+      "target": "18604688"
+    },
+    {
+      "source": "57a64140",
+      "target": "126f418a"
+    },
+    {
+      "source": "11aa7625",
+      "target": "aa42d42a"
+    },
+    {
+      "source": "c80ddd35",
+      "target": "fd475a1e"
     },
     {
       "source": "plotting2",
       "target": "9b6e7ea8"
     },
     {
-      "source": "b6d51e73",
-      "target": "38215985"
+      "source": "38215985",
+      "target": "6f18bb16"
     },
     {
-      "source": "ba26bc34",
-      "target": "5dd3ff40"
+      "source": "hyperparameter_tuning",
+      "target": "a4876725"
     },
     {
-      "source": "plotting2",
-      "target": "fd475a1e"
+      "source": "f23452a4",
+      "target": "5101fd75"
     },
     {
-      "source": "9b361b76",
-      "target": "99a96059"
+      "source": "96b75a62",
+      "target": "f23452a4"
     },
     {
-      "source": "7c58d8e6",
-      "target": "d4c33eb7"
+      "source": "f8802a59",
+      "target": "38d7350c"
+    },
+    {
+      "source": "64b583b0",
+      "target": "c80ddd35"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "ce8bbad1"
     },
     {
       "source": "6f18bb16",
       "target": "8c88dc95"
     },
     {
+      "source": "7c58d8e6",
+      "target": "d4c33eb7"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "488716b6"
+    },
+    {
+      "source": "b6d51e73",
+      "target": "38215985"
+    },
+    {
+      "source": "fd5ba886",
+      "target": "7a02fc22"
+    },
+    {
+      "source": "a76e0c6a",
+      "target": "41a1edf4"
+    },
+    {
       "source": "feature_engineering",
-      "target": "8c88dc95"
+      "target": "89fcf623"
+    },
+    {
+      "source": "d82bec08",
+      "target": "e54ed220"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "plotting1"
+    },
+    {
+      "source": "5f9ae5f8",
+      "target": "96b75a62"
+    },
+    {
+      "source": "plotting1",
+      "target": "2ef0dfa6"
+    },
+    {
+      "source": "d28b57b4",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "d82bec08",
+      "target": "ad457b79"
+    },
+    {
+      "source": "d82bec08",
+      "target": "fb3bf40e"
+    },
+    {
+      "source": "89fcf623",
+      "target": "99a96059"
+    },
+    {
+      "source": "89fcf623",
+      "target": "feature_selection"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "c5660a34"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "649b6c33"
+    },
+    {
+      "source": "64b583b0",
+      "target": "plotting2"
+    },
+    {
+      "source": "9b361b76",
+      "target": "5f2bec39"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "83059ae4"
+    },
+    {
+      "source": "38d7350c",
+      "target": "d82bec08"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "515adc75"
+    },
+    {
+      "source": "6f18bb16",
+      "target": "89fcf623"
+    },
+    {
+      "source": "plotting1",
+      "target": "9859bf01"
+    },
+    {
+      "source": "22eec376",
+      "target": "9f6d7645"
+    },
+    {
+      "source": "64b583b0",
+      "target": "af82e297"
+    },
+    {
+      "source": "9180b3c4",
+      "target": "f171f570"
+    },
+    {
+      "source": "99a96059",
+      "target": "5f9ae5f8"
+    },
+    {
+      "source": "43241260",
+      "target": "83059ae4"
+    },
+    {
+      "source": "a829e896",
+      "target": "37513a45"
+    },
+    {
+      "source": "plotting2",
+      "target": "33c13c26"
+    },
+    {
+      "source": "e45b062c",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "a829e896",
+      "target": "43241260"
+    },
+    {
+      "source": "96b75a62",
+      "target": "f8802a59"
+    },
+    {
+      "source": "180b6027",
+      "target": "38d7350c"
+    },
+    {
+      "source": "38d7350c",
+      "target": "5dd3ff40"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "96f9a385"
+    },
+    {
+      "source": "7a02fc22",
+      "target": "b6d51e73"
+    },
+    {
+      "source": "4f20c649",
+      "target": "feature_engineering"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "f171f570"
+    },
+    {
+      "source": "38d7350c",
+      "target": "4783f58e"
+    },
+    {
+      "source": "0fdd22ec",
+      "target": "eec4c56b"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "099f417c"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "7bf93589"
+    },
+    {
+      "source": "d28b57b4",
+      "target": "6f18bb16"
+    },
+    {
+      "source": "plotting1",
+      "target": "0bd85fc8"
+    },
+    {
+      "source": "4f1deb6c",
+      "target": "ce8bbad1"
+    },
+    {
+      "source": "f2d96b62",
+      "target": "38d7350c"
+    },
+    {
+      "source": "93394f08",
+      "target": "488716b6"
+    },
+    {
+      "source": "64b583b0",
+      "target": "fd5ba886"
+    },
+    {
+      "source": "e54ed220",
+      "target": "73f6418b"
+    },
+    {
+      "source": "8c88dc95",
+      "target": "96b75a62"
+    },
+    {
+      "source": "9b361b76",
+      "target": "feature_selection"
+    },
+    {
+      "source": "969c9482",
+      "target": "e86d3437"
+    },
+    {
+      "source": "f23452a4",
+      "target": "hyperparameter_tuning"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "a76e0c6a"
+    },
+    {
+      "source": "14773497",
+      "target": "c76d575e"
+    },
+    {
+      "source": "plotting1",
+      "target": "c6971d85"
+    },
+    {
+      "source": "43241260",
+      "target": "c5660a34"
+    },
+    {
+      "source": "64b583b0",
+      "target": "e30e9dd8"
+    },
+    {
+      "source": "a829e896",
+      "target": "38d7350c"
+    },
+    {
+      "source": "5101fd75",
+      "target": "1a149276"
+    },
+    {
+      "source": "37513a45",
+      "target": "a4876725"
+    },
+    {
+      "source": "plotting1",
+      "target": "e18f43fb"
+    },
+    {
+      "source": "plotting2",
+      "target": "6a1b604e"
+    },
+    {
+      "source": "ad457b79",
+      "target": "64bd37ea"
+    },
+    {
+      "source": "d82bec08",
+      "target": "11aa7625"
+    },
+    {
+      "source": "d82bec08",
+      "target": "plotting_evaluaton"
+    },
+    {
+      "source": "f23452a4",
+      "target": "969c9482"
+    },
+    {
+      "source": "d82bec08",
+      "target": "536a0bdc"
+    },
+    {
+      "source": "e30e9dd8",
+      "target": "33c13c26"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "e86d3437"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "64bd37ea"
+    },
+    {
+      "source": "36169aee",
+      "target": "99850b78"
+    },
+    {
+      "source": "89fcf623",
+      "target": "96b75a62"
+    },
+    {
+      "source": "plotting1",
+      "target": "41a1edf4"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "aa42d42a"
+    },
+    {
+      "source": "d82bec08",
+      "target": "9180b3c4"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "73f6418b"
+    },
+    {
+      "source": "b6d51e73",
+      "target": "755776fa"
+    },
+    {
+      "source": "f23452a4",
+      "target": "4f1deb6c"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "a7e07328"
+    },
+    {
+      "source": "9f6d7645",
+      "target": "4f20c649"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "1a149276"
+    },
+    {
+      "source": "d4c33eb7",
+      "target": "4aa6555d"
+    },
+    {
+      "source": "plotting1",
+      "target": "eec4c56b"
+    },
+    {
+      "source": "a5c1933d",
+      "target": "0bd85fc8"
+    },
+    {
+      "source": "0361cdb4",
+      "target": "a7e07328"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "0fdd22ec"
+    },
+    {
+      "source": "64b583b0",
+      "target": "d807a961"
+    },
+    {
+      "source": "3286fd3b",
+      "target": "c6971d85"
+    },
+    {
+      "source": "fb3bf40e",
+      "target": "649b6c33"
+    },
+    {
+      "source": "plotting1",
+      "target": "9d65c8e5"
+    },
+    {
+      "source": "755776fa",
+      "target": "6f18bb16"
+    },
+    {
+      "source": "64b583b0",
+      "target": "7903b14e"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "f2d96b62"
+    },
+    {
+      "source": "a829e896",
+      "target": "5101fd75"
+    },
+    {
+      "source": "f23452a4",
+      "target": "37513a45"
     }
   ],
   "layers": [
@@ -2293,16 +2577,16 @@
       "name": "eda"
     },
     {
-      "id": "feature_engineering",
-      "name": "feature_engineering"
-    },
-    {
       "id": "feature_selection",
       "name": "feature_selection"
     },
     {
       "id": "modeling",
       "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
     },
     {
       "id": "preprocess_data",
@@ -2321,199 +2605,11 @@
       "outputs": [],
       "children": [
         {
-          "id": "9f6d7645",
+          "id": "38d7350c",
           "type": "task"
         },
         {
-          "id": "2d5a9f0e",
-          "type": "parameters"
-        },
-        {
-          "id": "6a1b604e",
-          "type": "data"
-        },
-        {
-          "id": "a4876725",
-          "type": "data"
-        },
-        {
-          "id": "5f56f859",
-          "type": "parameters"
-        },
-        {
-          "id": "e18f43fb",
-          "type": "data"
-        },
-        {
-          "id": "9859bf01",
-          "type": "data"
-        },
-        {
-          "id": "5f56f859",
-          "type": "data"
-        },
-        {
-          "id": "4f20c649",
-          "type": "data"
-        },
-        {
-          "id": "feature_engineering",
-          "type": "modularPipeline"
-        },
-        {
-          "id": "73f6418b",
-          "type": "data"
-        },
-        {
-          "id": "41a1edf4",
-          "type": "data"
-        },
-        {
-          "id": "9b361b76",
-          "type": "parameters"
-        },
-        {
-          "id": "488716b6",
-          "type": "data"
-        },
-        {
-          "id": "feature_selection",
-          "type": "modularPipeline"
-        },
-        {
-          "id": "a829e896",
-          "type": "parameters"
-        },
-        {
-          "id": "hyperparameter_tuning",
-          "type": "modularPipeline"
-        },
-        {
-          "id": "plotting1",
-          "type": "modularPipeline"
-        },
-        {
-          "id": "ba26bc34",
-          "type": "task"
-        },
-        {
-          "id": "9d65c8e5",
-          "type": "data"
-        },
-        {
-          "id": "8c88dc95",
-          "type": "data"
-        },
-        {
-          "id": "e86d3437",
-          "type": "data"
-        },
-        {
-          "id": "f23452a4",
-          "type": "data"
-        },
-        {
-          "id": "64b583b0",
-          "type": "data"
-        },
-        {
-          "id": "515adc75",
-          "type": "data"
-        },
-        {
-          "id": "d28b57b4",
-          "type": "parameters"
-        },
-        {
-          "id": "7c58d8e6",
-          "type": "data"
-        },
-        {
-          "id": "d4c33eb7",
-          "type": "task"
-        },
-        {
-          "id": "c5660a34",
-          "type": "data"
-        },
-        {
-          "id": "f8802a59",
-          "type": "data"
-        },
-        {
-          "id": "4aa6555d",
-          "type": "data"
-        },
-        {
-          "id": "eec4c56b",
-          "type": "data"
-        },
-        {
-          "id": "33c13c26",
-          "type": "data"
-        },
-        {
-          "id": "9b6e7ea8",
-          "type": "data"
-        },
-        {
-          "id": "126f418a",
-          "type": "data"
-        },
-        {
-          "id": "d82bec08",
-          "type": "data"
-        },
-        {
-          "id": "2ef0dfa6",
-          "type": "data"
-        },
-        {
-          "id": "0bd85fc8",
-          "type": "data"
-        },
-        {
-          "id": "5dd3ff40",
-          "type": "data"
-        },
-        {
-          "id": "4783f58e",
-          "type": "data"
-        },
-        {
-          "id": "099f417c",
-          "type": "data"
-        },
-        {
-          "id": "plotting2",
-          "type": "modularPipeline"
-        },
-        {
-          "id": "64bd37ea",
-          "type": "data"
-        },
-        {
-          "id": "e45b062c",
-          "type": "parameters"
-        },
-        {
-          "id": "18604688",
-          "type": "data"
-        },
-        {
-          "id": "f2d96b62",
-          "type": "data"
-        },
-        {
-          "id": "1a149276",
-          "type": "data"
-        },
-        {
-          "id": "22eec376",
-          "type": "parameters"
-        },
-        {
-          "id": "aa42d42a",
+          "id": "99850b78",
           "type": "data"
         },
         {
@@ -2521,7 +2617,23 @@
           "type": "data"
         },
         {
-          "id": "fd475a1e",
+          "id": "f8802a59",
+          "type": "data"
+        },
+        {
+          "id": "c6971d85",
+          "type": "data"
+        },
+        {
+          "id": "e86d3437",
+          "type": "data"
+        },
+        {
+          "id": "4783f58e",
+          "type": "data"
+        },
+        {
+          "id": "18604688",
           "type": "data"
         },
         {
@@ -2529,11 +2641,67 @@
           "type": "data"
         },
         {
-          "id": "plotting_evaluaton",
+          "id": "d82bec08",
+          "type": "data"
+        },
+        {
+          "id": "5f56f859",
+          "type": "data"
+        },
+        {
+          "id": "e45b062c",
+          "type": "parameters"
+        },
+        {
+          "id": "488716b6",
+          "type": "data"
+        },
+        {
+          "id": "4f20c649",
+          "type": "data"
+        },
+        {
+          "id": "plotting1",
           "type": "modularPipeline"
         },
         {
-          "id": "22eec376",
+          "id": "fd475a1e",
+          "type": "data"
+        },
+        {
+          "id": "a7e07328",
+          "type": "data"
+        },
+        {
+          "id": "515adc75",
+          "type": "data"
+        },
+        {
+          "id": "aa42d42a",
+          "type": "data"
+        },
+        {
+          "id": "f2d96b62",
+          "type": "data"
+        },
+        {
+          "id": "0bd85fc8",
+          "type": "data"
+        },
+        {
+          "id": "f23452a4",
+          "type": "data"
+        },
+        {
+          "id": "5f56f859",
+          "type": "parameters"
+        },
+        {
+          "id": "c76d575e",
+          "type": "data"
+        },
+        {
+          "id": "7c58d8e6",
           "type": "data"
         },
         {
@@ -2545,12 +2713,152 @@
           "type": "parameters"
         },
         {
+          "id": "5dd3ff40",
+          "type": "data"
+        },
+        {
+          "id": "22eec376",
+          "type": "data"
+        },
+        {
+          "id": "8c88dc95",
+          "type": "data"
+        },
+        {
+          "id": "22eec376",
+          "type": "parameters"
+        },
+        {
+          "id": "plotting_evaluaton",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "9f6d7645",
+          "type": "task"
+        },
+        {
+          "id": "126f418a",
+          "type": "data"
+        },
+        {
+          "id": "feature_engineering",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "eec4c56b",
+          "type": "data"
+        },
+        {
+          "id": "9859bf01",
+          "type": "data"
+        },
+        {
+          "id": "9b361b76",
+          "type": "parameters"
+        },
+        {
+          "id": "33c13c26",
+          "type": "data"
+        },
+        {
+          "id": "099f417c",
+          "type": "data"
+        },
+        {
+          "id": "41a1edf4",
+          "type": "data"
+        },
+        {
+          "id": "9d65c8e5",
+          "type": "data"
+        },
+        {
+          "id": "f171f570",
+          "type": "data"
+        },
+        {
+          "id": "2ef0dfa6",
+          "type": "data"
+        },
+        {
+          "id": "d28b57b4",
+          "type": "parameters"
+        },
+        {
+          "id": "a829e896",
+          "type": "parameters"
+        },
+        {
+          "id": "1a149276",
+          "type": "data"
+        },
+        {
+          "id": "64b583b0",
+          "type": "data"
+        },
+        {
+          "id": "hyperparameter_tuning",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "73f6418b",
+          "type": "data"
+        },
+        {
+          "id": "e18f43fb",
+          "type": "data"
+        },
+        {
+          "id": "64bd37ea",
+          "type": "data"
+        },
+        {
           "id": "83059ae4",
           "type": "data"
         },
         {
-          "id": "c6971d85",
+          "id": "plotting2",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "2d5a9f0e",
+          "type": "parameters"
+        },
+        {
+          "id": "c5660a34",
           "type": "data"
+        },
+        {
+          "id": "d4c33eb7",
+          "type": "task"
+        },
+        {
+          "id": "180b6027",
+          "type": "data"
+        },
+        {
+          "id": "a4876725",
+          "type": "data"
+        },
+        {
+          "id": "ce8bbad1",
+          "type": "data"
+        },
+        {
+          "id": "4aa6555d",
+          "type": "data"
+        },
+        {
+          "id": "6a1b604e",
+          "type": "data"
+        },
+        {
+          "id": "9b6e7ea8",
+          "type": "data"
+        },
+        {
+          "id": "feature_selection",
+          "type": "modularPipeline"
         }
       ]
     },
@@ -2558,20 +2866,24 @@
       "id": "feature_engineering",
       "name": "feature_engineering",
       "inputs": [
-        "4f20c649",
-        "64b583b0",
         "2d5a9f0e",
-        "d28b57b4",
+        "a049c996",
+        "64b583b0",
         "e45b062c",
-        "a049c996"
+        "4f20c649",
+        "d28b57b4"
       ],
       "outputs": [
-        "8c88dc95",
-        "89fcf623"
+        "89fcf623",
+        "8c88dc95"
       ],
       "children": [
         {
-          "id": "b6d51e73",
+          "id": "755776fa",
+          "type": "data"
+        },
+        {
+          "id": "6f18bb16",
           "type": "task"
         },
         {
@@ -2579,27 +2891,23 @@
           "type": "task"
         },
         {
-          "id": "7a02fc22",
-          "type": "data"
-        },
-        {
-          "id": "755776fa",
-          "type": "data"
+          "id": "b6d51e73",
+          "type": "task"
         },
         {
           "id": "1f56aa7e",
           "type": "data"
         },
         {
-          "id": "d807a961",
-          "type": "task"
+          "id": "7a02fc22",
+          "type": "data"
         },
         {
           "id": "38215985",
           "type": "data"
         },
         {
-          "id": "6f18bb16",
+          "id": "d807a961",
           "type": "task"
         }
       ]
@@ -2608,16 +2916,28 @@
       "id": "feature_selection",
       "name": "feature_selection",
       "inputs": [
-        "8c88dc95",
+        "89fcf623",
         "9b361b76",
-        "89fcf623"
+        "8c88dc95"
       ],
       "outputs": [
         "f23452a4",
-        "f8802a59",
-        "18604688"
+        "18604688",
+        "f8802a59"
       ],
       "children": [
+        {
+          "id": "96b75a62",
+          "type": "task"
+        },
+        {
+          "id": "99a96059",
+          "type": "task"
+        },
+        {
+          "id": "5f9ae5f8",
+          "type": "data"
+        },
         {
           "id": "5f2bec39",
           "type": "task"
@@ -2625,18 +2945,6 @@
         {
           "id": "5a416e00",
           "type": "data"
-        },
-        {
-          "id": "5f9ae5f8",
-          "type": "data"
-        },
-        {
-          "id": "99a96059",
-          "type": "task"
-        },
-        {
-          "id": "96b75a62",
-          "type": "task"
         }
       ]
     },
@@ -2644,25 +2952,31 @@
       "id": "hyperparameter_tuning",
       "name": "hyperparameter_tuning",
       "inputs": [
-        "f23452a4",
-        "a829e896"
+        "a829e896",
+        "f23452a4"
       ],
       "outputs": [
-        "f2d96b62",
-        "e86d3437",
+        "180b6027",
         "83059ae4",
-        "099f417c",
+        "e86d3437",
         "1a149276",
+        "ce8bbad1",
+        "f2d96b62",
+        "099f417c",
         "c5660a34",
         "a4876725"
       ],
       "children": [
         {
-          "id": "43241260",
+          "id": "969c9482",
           "type": "task"
         },
         {
-          "id": "969c9482",
+          "id": "5101fd75",
+          "type": "task"
+        },
+        {
+          "id": "43241260",
           "type": "task"
         },
         {
@@ -2670,7 +2984,7 @@
           "type": "task"
         },
         {
-          "id": "5101fd75",
+          "id": "4f1deb6c",
           "type": "task"
         }
       ]
@@ -2682,43 +2996,23 @@
         "4aa6555d"
       ],
       "outputs": [
-        "9d65c8e5",
-        "2ef0dfa6",
-        "0bd85fc8",
-        "e18f43fb",
-        "9859bf01",
         "eec4c56b",
+        "9d65c8e5",
+        "9859bf01",
+        "c6971d85",
+        "0bd85fc8",
         "126f418a",
+        "e18f43fb",
         "41a1edf4",
-        "c6971d85"
+        "2ef0dfa6"
       ],
       "children": [
-        {
-          "id": "5c931cfd",
-          "type": "task"
-        },
-        {
-          "id": "57a64140",
-          "type": "task"
-        },
-        {
-          "id": "a8da2b04",
-          "type": "task"
-        },
-        {
-          "id": "96f9a385",
-          "type": "task"
-        },
-        {
-          "id": "3286fd3b",
-          "type": "task"
-        },
         {
           "id": "7bf93589",
           "type": "task"
         },
         {
-          "id": "a76e0c6a",
+          "id": "5c931cfd",
           "type": "task"
         },
         {
@@ -2727,6 +3021,26 @@
         },
         {
           "id": "0fdd22ec",
+          "type": "task"
+        },
+        {
+          "id": "57a64140",
+          "type": "task"
+        },
+        {
+          "id": "a76e0c6a",
+          "type": "task"
+        },
+        {
+          "id": "96f9a385",
+          "type": "task"
+        },
+        {
+          "id": "a8da2b04",
+          "type": "task"
+        },
+        {
+          "id": "3286fd3b",
           "type": "task"
         }
       ]
@@ -2738,13 +3052,21 @@
         "64b583b0"
       ],
       "outputs": [
-        "33c13c26",
+        "6a1b604e",
         "fd475a1e",
         "9b6e7ea8",
-        "aba06a78",
-        "6a1b604e"
+        "33c13c26",
+        "aba06a78"
       ],
       "children": [
+        {
+          "id": "49edcade",
+          "type": "task"
+        },
+        {
+          "id": "e30e9dd8",
+          "type": "task"
+        },
         {
           "id": "c80ddd35",
           "type": "task"
@@ -2756,14 +3078,6 @@
         {
           "id": "7903b14e",
           "type": "task"
-        },
-        {
-          "id": "49edcade",
-          "type": "task"
-        },
-        {
-          "id": "e30e9dd8",
-          "type": "task"
         }
       ]
     },
@@ -2771,31 +3085,29 @@
       "id": "plotting_evaluaton",
       "name": "plotting_evaluaton",
       "inputs": [
+        "c5660a34",
+        "f23452a4",
         "d82bec08"
       ],
       "outputs": [
+        "73f6418b",
         "64bd37ea",
+        "f171f570",
+        "a7e07328",
+        "649b6c33",
+        "515adc75",
         "488716b6",
         "aa42d42a",
-        "649b6c33",
-        "73f6418b",
-        "515adc75"
+        "c76d575e",
+        "99850b78"
       ],
       "children": [
-        {
-          "id": "ad457b79",
-          "type": "task"
-        },
         {
           "id": "536a0bdc",
           "type": "task"
         },
         {
-          "id": "fb3bf40e",
-          "type": "task"
-        },
-        {
-          "id": "e54ed220",
+          "id": "14773497",
           "type": "task"
         },
         {
@@ -2803,7 +3115,31 @@
           "type": "task"
         },
         {
+          "id": "ad457b79",
+          "type": "task"
+        },
+        {
+          "id": "fb3bf40e",
+          "type": "task"
+        },
+        {
+          "id": "9180b3c4",
+          "type": "task"
+        },
+        {
+          "id": "36169aee",
+          "type": "task"
+        },
+        {
+          "id": "e54ed220",
+          "type": "task"
+        },
+        {
           "id": "11aa7625",
+          "type": "task"
+        },
+        {
+          "id": "0361cdb4",
           "type": "task"
         }
       ]

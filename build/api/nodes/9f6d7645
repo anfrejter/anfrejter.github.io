@@ -1,6 +1,6 @@
 {
   "code": "def split_data(data: pd.DataFrame, parameters: dict):\n    \"\"\"\n    Split the data into training and test sets.\n    It uses the parameters defined in conf/base/parameters_split_data.yml\n    \"\"\"\n    df_train, df_test = train_test_split(data,\n                                        test_size=parameters[\"test_size\"],\n                                        random_state=parameters[\"random_state\"],\n                                        stratify=data[parameters[\"target_col\"]],\n                                        shuffle=parameters[\"shuffle\"]\n                                        )\n    return df_train, df_test\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\split_data\\nodes.py",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/split_data/nodes.py",
   "parameters": {
     "split_options": {
       "test_size": 0.2,

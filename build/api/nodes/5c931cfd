@@ -1,6 +1,6 @@
 {
   "code": "def plot_GSR_distribution(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable 'GSR'\n    \"\"\"\n    return data[['GSR']]\n",
-  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\eda\\nodes.py",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/eda/nodes.py",
   "parameters": {},
   "run_command": "kedro run --to-nodes='plotting1.plot_GSR_distribution'",
   "inputs": [
