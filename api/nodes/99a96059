@@ -1,0 +1,20 @@
+{
+  "code": "def get_feat_rank_corr(train, params):\n    \"\"\"\n    Calculate the correlation of each feature with the target variable and rank them.\n    \"\"\"\n\n    target_col = params['target']\n    train[target_col] = train[target_col].cat.codes\n    columns = [x for x in train.columns if x != target_col]\n\n    corr = train[columns].corrwith(train[target_col])\n\n    return pd.DataFrame({\n        \"variable\": columns,\n        \"corr\": corr,\n        \"corr_rank\": corr.abs().rank(ascending=False).astype(int).to_list()\n    }).sort_values('corr_rank')\n",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/feature_selection/nodes.py",
+  "parameters": {
+    "fs_params": {
+      "target": "Mood_State",
+      "n_vars": 15,
+      "method": "backward",
+      "kwarg": "GBM"
+    }
+  },
+  "run_command": "kedro run --to-nodes='feature_selection.get_feat_rank_corr_node'",
+  "inputs": [
+    "final_train_data",
+    "params:fs_params"
+  ],
+  "outputs": [
+    "feat_rank_corr_results"
+  ]
+}

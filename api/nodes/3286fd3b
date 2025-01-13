@@ -1,0 +1,12 @@
+{
+  "code": "def plot_Gender_distribution(data: pd.DataFrame):\n    \"\"\"\n    Plot the distribution of the target variable 'Gender'\n    \"\"\"\n    return (data.groupby('Gender', observed=False)\n            .count()[['Time']]\n            .reset_index()\n            .rename(columns={'Time':'Count2'}))\n",
+  "filepath": "anfrejter.github.io/src/psychological_state_classification/pipelines/eda/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='plotting1.plot_Gender_distribution'",
+  "inputs": [
+    "preprocessed_data"
+  ],
+  "outputs": [
+    "plot_Gender_distribution_px"
+  ]
+}

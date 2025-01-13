@@ -1,0 +1,1616 @@
+{
+  "nodes": [
+    {
+      "id": "4aa6555d",
+      "name": "preprocessed_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data",
+        "eda",
+        "preprocess_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 22,
+        "file_size": 130418
+      }
+    },
+    {
+      "id": "a8da2b04",
+      "name": "plot_Age_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "e18f43fb",
+      "name": "plot_Age_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 1,
+        "file_size": 10434
+      }
+    },
+    {
+      "id": "0fdd22ec",
+      "name": "plot_Educational_Level_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "eec4c56b",
+      "name": "plot_Educational_Level_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 3,
+        "columns": 2,
+        "file_size": 7372
+      }
+    },
+    {
+      "id": "5c931cfd",
+      "name": "plot_GSR_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "9d65c8e5",
+      "name": "plot_GSR_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 1,
+        "file_size": 26275
+      }
+    },
+    {
+      "id": "3286fd3b",
+      "name": "plot_Gender_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "c6971d85",
+      "name": "plot_Gender_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 3,
+        "columns": 2,
+        "file_size": 7318
+      }
+    },
+    {
+      "id": "a5c1933d",
+      "name": "plot_HRV_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "0bd85fc8",
+      "name": "plot_HRV_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 1,
+        "file_size": 25658
+      }
+    },
+    {
+      "id": "7bf93589",
+      "name": "plot_Heart_Rate_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "2ef0dfa6",
+      "name": "plot_Heart_Rate_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 1,
+        "file_size": 10489
+      }
+    },
+    {
+      "id": "a76e0c6a",
+      "name": "plot_Task_Type_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "41a1edf4",
+      "name": "plot_Task_Type_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 4,
+        "columns": 2,
+        "file_size": 7356
+      }
+    },
+    {
+      "id": "57a64140",
+      "name": "plot_Time_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "126f418a",
+      "name": "plot_Time_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": null
+    },
+    {
+      "id": "96f9a385",
+      "name": "plot_mood_state_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "9859bf01",
+      "name": "plot_mood_state_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 4,
+        "columns": 2,
+        "file_size": 7343
+      }
+    },
+    {
+      "id": "64b583b0",
+      "name": "train_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data",
+        "eda",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2",
+        "feature_engineering"
+      ],
+      "layer": "primary",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 22,
+        "file_size": 111418
+      }
+    },
+    {
+      "id": "e30e9dd8",
+      "name": "plot_Age_vs_Mood_State",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "33c13c26",
+      "name": "plot_Age_vs_Mood_State_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 2,
+        "file_size": 16661
+      }
+    },
+    {
+      "id": "7903b14e",
+      "name": "plot_Heart_Rate_vs_HRV_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "6a1b604e",
+      "name": "plot_Heart_Rate_vs_HRV_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 2,
+        "file_size": 24408
+      }
+    },
+    {
+      "id": "49edcade",
+      "name": "plot_Mood_State_by_Gender_distribution",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "aba06a78",
+      "name": "plot_Mood_State_by_Gender_distribution_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 2,
+        "file_size": 15075
+      }
+    },
+    {
+      "id": "c80ddd35",
+      "name": "plot_Skin_Temp_vs_Mood_StateV_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "fd475a1e",
+      "name": "plot_Skin_Temp_vs_Mood_State_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 2,
+        "file_size": 28836
+      }
+    },
+    {
+      "id": "af82e297",
+      "name": "plot_Task_Type_vs_Educational_Level",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "9b6e7ea8",
+      "name": "plot_Task_Type_vs_Educational_Level_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2"
+      ],
+      "layer": "primary",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 2,
+        "file_size": 18326
+      }
+    },
+    {
+      "id": "f23452a4",
+      "name": "train_model",
+      "tags": [],
+      "pipelines": [
+        "modeling",
+        "__default__",
+        "eda",
+        "feature_selection"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning",
+        "plotting_evaluaton",
+        "feature_selection"
+      ],
+      "layer": "model",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 16,
+        "file_size": 98462
+      }
+    },
+    {
+      "id": "c5660a34",
+      "name": "XGB_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning",
+        "plotting_evaluaton"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "d82bec08",
+      "name": "y_test_preds",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 6,
+        "file_size": 35575
+      }
+    },
+    {
+      "id": "14773497",
+      "name": "plot_fi_xgb_g_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "c76d575e",
+      "name": "plot_fi_xgb_g_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 15,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "36169aee",
+      "name": "plot_fi_xgb_w_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "99850b78",
+      "name": "plot_fi_xgb_w_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 15,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "9180b3c4",
+      "name": "plot_confusion_matrix_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "f171f570",
+      "name": "plot_confusion_matrix_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "536a0bdc",
+      "name": "plot_confusion_matrix_lgbm_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "515adc75",
+      "name": "plot_confusion_matrix_lgbm_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "11aa7625",
+      "name": "plot_confusion_matrix_lr_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "aa42d42a",
+      "name": "plot_confusion_matrix_lr_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "fb3bf40e",
+      "name": "plot_confusion_matrix_xgb_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "649b6c33",
+      "name": "plot_confusion_matrix_xgb_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 2,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "0361cdb4",
+      "name": "plot_roc_auc_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "a7e07328",
+      "name": "plot_roc_auc_ada_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 54,
+        "columns": 5,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "ad457b79",
+      "name": "plot_roc_auc_lgbm_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "64bd37ea",
+      "name": "plot_roc_auc_lgbm_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 310,
+        "columns": 5,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "e54ed220",
+      "name": "plot_roc_auc_lr_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "73f6418b",
+      "name": "plot_roc_auc_lr_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 320,
+        "columns": 5,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "93394f08",
+      "name": "plot_roc_auc_xgb_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "488716b6",
+      "name": "plot_roc_auc_xgb_px",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "plotly.plotly_dataset.PlotlyDataset",
+      "stats": {
+        "rows": 317,
+        "columns": 5,
+        "file_size": 288
+      }
+    },
+    {
+      "id": "plotting1",
+      "name": "plotting1",
+      "tags": [],
+      "pipelines": [
+        "eda"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "plotting2",
+      "name": "plotting2",
+      "tags": [],
+      "pipelines": [
+        "eda"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "plotting_evaluaton",
+      "name": "plotting_evaluaton",
+      "tags": [],
+      "pipelines": [
+        "eda"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "plotting1",
+      "target": "c6971d85"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "57a64140"
+    },
+    {
+      "source": "d82bec08",
+      "target": "9180b3c4"
+    },
+    {
+      "source": "ad457b79",
+      "target": "64bd37ea"
+    },
+    {
+      "source": "c5660a34",
+      "target": "36169aee"
+    },
+    {
+      "source": "d82bec08",
+      "target": "ad457b79"
+    },
+    {
+      "source": "f23452a4",
+      "target": "36169aee"
+    },
+    {
+      "source": "d82bec08",
+      "target": "11aa7625"
+    },
+    {
+      "source": "e30e9dd8",
+      "target": "33c13c26"
+    },
+    {
+      "source": "64b583b0",
+      "target": "af82e297"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "0fdd22ec"
+    },
+    {
+      "source": "11aa7625",
+      "target": "aa42d42a"
+    },
+    {
+      "source": "57a64140",
+      "target": "126f418a"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "3286fd3b"
+    },
+    {
+      "source": "7bf93589",
+      "target": "2ef0dfa6"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "7bf93589"
+    },
+    {
+      "source": "d82bec08",
+      "target": "536a0bdc"
+    },
+    {
+      "source": "c5660a34",
+      "target": "14773497"
+    },
+    {
+      "source": "f23452a4",
+      "target": "14773497"
+    },
+    {
+      "source": "536a0bdc",
+      "target": "515adc75"
+    },
+    {
+      "source": "plotting2",
+      "target": "6a1b604e"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "a5c1933d"
+    },
+    {
+      "source": "64b583b0",
+      "target": "plotting2"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "a8da2b04"
+    },
+    {
+      "source": "plotting1",
+      "target": "9d65c8e5"
+    },
+    {
+      "source": "a8da2b04",
+      "target": "e18f43fb"
+    },
+    {
+      "source": "plotting1",
+      "target": "126f418a"
+    },
+    {
+      "source": "plotting2",
+      "target": "33c13c26"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "73f6418b"
+    },
+    {
+      "source": "d82bec08",
+      "target": "fb3bf40e"
+    },
+    {
+      "source": "d82bec08",
+      "target": "e54ed220"
+    },
+    {
+      "source": "64b583b0",
+      "target": "e30e9dd8"
+    },
+    {
+      "source": "5c931cfd",
+      "target": "9d65c8e5"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "c76d575e"
+    },
+    {
+      "source": "96f9a385",
+      "target": "9859bf01"
+    },
+    {
+      "source": "a76e0c6a",
+      "target": "41a1edf4"
+    },
+    {
+      "source": "9180b3c4",
+      "target": "f171f570"
+    },
+    {
+      "source": "93394f08",
+      "target": "488716b6"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "a76e0c6a"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "f171f570"
+    },
+    {
+      "source": "64b583b0",
+      "target": "c80ddd35"
+    },
+    {
+      "source": "af82e297",
+      "target": "9b6e7ea8"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "96f9a385"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "99850b78"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "649b6c33"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "a7e07328"
+    },
+    {
+      "source": "d82bec08",
+      "target": "plotting_evaluaton"
+    },
+    {
+      "source": "fb3bf40e",
+      "target": "649b6c33"
+    },
+    {
+      "source": "plotting1",
+      "target": "e18f43fb"
+    },
+    {
+      "source": "64b583b0",
+      "target": "49edcade"
+    },
+    {
+      "source": "plotting1",
+      "target": "0bd85fc8"
+    },
+    {
+      "source": "plotting2",
+      "target": "aba06a78"
+    },
+    {
+      "source": "7903b14e",
+      "target": "6a1b604e"
+    },
+    {
+      "source": "f23452a4",
+      "target": "plotting_evaluaton"
+    },
+    {
+      "source": "e54ed220",
+      "target": "73f6418b"
+    },
+    {
+      "source": "plotting1",
+      "target": "2ef0dfa6"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "plotting1"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "aa42d42a"
+    },
+    {
+      "source": "a5c1933d",
+      "target": "0bd85fc8"
+    },
+    {
+      "source": "14773497",
+      "target": "c76d575e"
+    },
+    {
+      "source": "0fdd22ec",
+      "target": "eec4c56b"
+    },
+    {
+      "source": "36169aee",
+      "target": "99850b78"
+    },
+    {
+      "source": "d82bec08",
+      "target": "0361cdb4"
+    },
+    {
+      "source": "plotting1",
+      "target": "41a1edf4"
+    },
+    {
+      "source": "64b583b0",
+      "target": "7903b14e"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "5c931cfd"
+    },
+    {
+      "source": "0361cdb4",
+      "target": "a7e07328"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "515adc75"
+    },
+    {
+      "source": "plotting2",
+      "target": "9b6e7ea8"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "488716b6"
+    },
+    {
+      "source": "plotting_evaluaton",
+      "target": "64bd37ea"
+    },
+    {
+      "source": "d82bec08",
+      "target": "93394f08"
+    },
+    {
+      "source": "plotting2",
+      "target": "fd475a1e"
+    },
+    {
+      "source": "49edcade",
+      "target": "aba06a78"
+    },
+    {
+      "source": "plotting1",
+      "target": "eec4c56b"
+    },
+    {
+      "source": "3286fd3b",
+      "target": "c6971d85"
+    },
+    {
+      "source": "c5660a34",
+      "target": "plotting_evaluaton"
+    },
+    {
+      "source": "plotting1",
+      "target": "9859bf01"
+    },
+    {
+      "source": "c80ddd35",
+      "target": "fd475a1e"
+    }
+  ],
+  "layers": [
+    "feature",
+    "hyperparameter_tuning",
+    "initial_model",
+    "intermediate",
+    "model",
+    "primary",
+    "raw",
+    "model_output"
+  ],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "split_data",
+      "name": "split_data"
+    },
+    {
+      "id": "preprocess_data",
+      "name": "preprocess_data"
+    },
+    {
+      "id": "feature_selection",
+      "name": "feature_selection"
+    },
+    {
+      "id": "modeling",
+      "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "eda",
+      "name": "eda"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "a7e07328",
+          "type": "data"
+        },
+        {
+          "id": "aba06a78",
+          "type": "data"
+        },
+        {
+          "id": "c76d575e",
+          "type": "data"
+        },
+        {
+          "id": "d82bec08",
+          "type": "data"
+        },
+        {
+          "id": "plotting_evaluaton",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "99850b78",
+          "type": "data"
+        },
+        {
+          "id": "aa42d42a",
+          "type": "data"
+        },
+        {
+          "id": "9d65c8e5",
+          "type": "data"
+        },
+        {
+          "id": "plotting2",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "2ef0dfa6",
+          "type": "data"
+        },
+        {
+          "id": "0bd85fc8",
+          "type": "data"
+        },
+        {
+          "id": "9859bf01",
+          "type": "data"
+        },
+        {
+          "id": "9b6e7ea8",
+          "type": "data"
+        },
+        {
+          "id": "64b583b0",
+          "type": "data"
+        },
+        {
+          "id": "515adc75",
+          "type": "data"
+        },
+        {
+          "id": "c5660a34",
+          "type": "data"
+        },
+        {
+          "id": "fd475a1e",
+          "type": "data"
+        },
+        {
+          "id": "eec4c56b",
+          "type": "data"
+        },
+        {
+          "id": "4aa6555d",
+          "type": "data"
+        },
+        {
+          "id": "f23452a4",
+          "type": "data"
+        },
+        {
+          "id": "41a1edf4",
+          "type": "data"
+        },
+        {
+          "id": "f171f570",
+          "type": "data"
+        },
+        {
+          "id": "649b6c33",
+          "type": "data"
+        },
+        {
+          "id": "c6971d85",
+          "type": "data"
+        },
+        {
+          "id": "e18f43fb",
+          "type": "data"
+        },
+        {
+          "id": "33c13c26",
+          "type": "data"
+        },
+        {
+          "id": "plotting1",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "488716b6",
+          "type": "data"
+        },
+        {
+          "id": "73f6418b",
+          "type": "data"
+        },
+        {
+          "id": "126f418a",
+          "type": "data"
+        },
+        {
+          "id": "64bd37ea",
+          "type": "data"
+        },
+        {
+          "id": "6a1b604e",
+          "type": "data"
+        }
+      ]
+    },
+    "plotting1": {
+      "id": "plotting1",
+      "name": "plotting1",
+      "inputs": [
+        "4aa6555d"
+      ],
+      "outputs": [
+        "2ef0dfa6",
+        "0bd85fc8",
+        "9d65c8e5",
+        "41a1edf4",
+        "eec4c56b",
+        "c6971d85",
+        "9859bf01",
+        "126f418a",
+        "e18f43fb"
+      ],
+      "children": [
+        {
+          "id": "0fdd22ec",
+          "type": "task"
+        },
+        {
+          "id": "a76e0c6a",
+          "type": "task"
+        },
+        {
+          "id": "96f9a385",
+          "type": "task"
+        },
+        {
+          "id": "3286fd3b",
+          "type": "task"
+        },
+        {
+          "id": "a5c1933d",
+          "type": "task"
+        },
+        {
+          "id": "57a64140",
+          "type": "task"
+        },
+        {
+          "id": "a8da2b04",
+          "type": "task"
+        },
+        {
+          "id": "7bf93589",
+          "type": "task"
+        },
+        {
+          "id": "5c931cfd",
+          "type": "task"
+        }
+      ]
+    },
+    "plotting2": {
+      "id": "plotting2",
+      "name": "plotting2",
+      "inputs": [
+        "64b583b0"
+      ],
+      "outputs": [
+        "9b6e7ea8",
+        "fd475a1e",
+        "33c13c26",
+        "aba06a78",
+        "6a1b604e"
+      ],
+      "children": [
+        {
+          "id": "af82e297",
+          "type": "task"
+        },
+        {
+          "id": "e30e9dd8",
+          "type": "task"
+        },
+        {
+          "id": "49edcade",
+          "type": "task"
+        },
+        {
+          "id": "c80ddd35",
+          "type": "task"
+        },
+        {
+          "id": "7903b14e",
+          "type": "task"
+        }
+      ]
+    },
+    "plotting_evaluaton": {
+      "id": "plotting_evaluaton",
+      "name": "plotting_evaluaton",
+      "inputs": [
+        "f23452a4",
+        "c5660a34",
+        "d82bec08"
+      ],
+      "outputs": [
+        "73f6418b",
+        "aa42d42a",
+        "a7e07328",
+        "f171f570",
+        "649b6c33",
+        "488716b6",
+        "64bd37ea",
+        "c76d575e",
+        "99850b78",
+        "515adc75"
+      ],
+      "children": [
+        {
+          "id": "9180b3c4",
+          "type": "task"
+        },
+        {
+          "id": "fb3bf40e",
+          "type": "task"
+        },
+        {
+          "id": "36169aee",
+          "type": "task"
+        },
+        {
+          "id": "0361cdb4",
+          "type": "task"
+        },
+        {
+          "id": "e54ed220",
+          "type": "task"
+        },
+        {
+          "id": "11aa7625",
+          "type": "task"
+        },
+        {
+          "id": "93394f08",
+          "type": "task"
+        },
+        {
+          "id": "14773497",
+          "type": "task"
+        },
+        {
+          "id": "536a0bdc",
+          "type": "task"
+        },
+        {
+          "id": "ad457b79",
+          "type": "task"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "eda"
+}

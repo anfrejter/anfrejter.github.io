@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "params": {
+      "target": "Mood_State",
+      "scoring": "roc_auc_ovr",
+      "n_trials": 500
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "pickle.pickle_dataset.PickleDataset",
+  "filepath": "/home/runner/work/anfrejter.github.io/anfrejter.github.io/data/03_primary/test_data.pkl",
+  "run_command": "kedro run --to-outputs=test_data",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 200,
+    "columns": 22,
+    "file_size": 30365
+  }
+}

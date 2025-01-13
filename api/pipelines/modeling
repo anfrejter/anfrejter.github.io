@@ -1,0 +1,716 @@
+{
+  "nodes": [
+    {
+      "id": "f23452a4",
+      "name": "train_model",
+      "tags": [],
+      "pipelines": [
+        "modeling",
+        "__default__",
+        "eda",
+        "feature_selection"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning",
+        "plotting_evaluaton",
+        "feature_selection"
+      ],
+      "layer": "model",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 16,
+        "file_size": 98462
+      }
+    },
+    {
+      "id": "f8802a59",
+      "name": "test_model",
+      "tags": [],
+      "pipelines": [
+        "modeling",
+        "__default__",
+        "feature_selection"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_selection"
+      ],
+      "layer": "model",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 16,
+        "file_size": 25843
+      }
+    },
+    {
+      "id": "5101fd75",
+      "name": "get_initial_score_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "a829e896",
+      "name": "params:params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "1a149276",
+      "name": "initial_cv_score",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "initial_model",
+      "dataset_type": "tracking.metrics_dataset.MetricsDataset",
+      "stats": null
+    },
+    {
+      "id": "4f1deb6c",
+      "name": "optimize_ada_hyperparams_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "ce8bbad1",
+      "name": "ADA_optuna_params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "tracking.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "180b6027",
+      "name": "ADA_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "969c9482",
+      "name": "optimize_lgbm_hyperparams_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "e86d3437",
+      "name": "LGBM_optuna_params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "tracking.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "f2d96b62",
+      "name": "LGBM_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "37513a45",
+      "name": "optimize_lr_hyperparams_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "099f417c",
+      "name": "LR_optuna_params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "tracking.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "a4876725",
+      "name": "LR_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "43241260",
+      "name": "optimize_xgb_hyperparams_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "83059ae4",
+      "name": "XGB_optuna_params",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "tracking.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "c5660a34",
+      "name": "XGB_optuna_params_",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "hyperparameter_tuning",
+        "plotting_evaluaton"
+      ],
+      "layer": "hyperparameter_tuning",
+      "dataset_type": "json.json_dataset.JSONDataset",
+      "stats": null
+    },
+    {
+      "id": "38d7350c",
+      "name": "eval_best_models_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "parameters": {
+        "params": {
+          "target": "Mood_State",
+          "scoring": "roc_auc_ovr",
+          "n_trials": 500
+        }
+      }
+    },
+    {
+      "id": "4783f58e",
+      "name": "models_evaluation",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "layer": "model_output",
+      "dataset_type": "tracking.metrics_dataset.MetricsDataset",
+      "stats": null
+    },
+    {
+      "id": "5dd3ff40",
+      "name": "y_train_preds",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "layer": "model_output",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 3200,
+        "columns": 6,
+        "file_size": 138790
+      }
+    },
+    {
+      "id": "d82bec08",
+      "name": "y_test_preds",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "eda",
+        "modeling"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting_evaluaton"
+      ],
+      "layer": "model_output",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 6,
+        "file_size": 35575
+      }
+    },
+    {
+      "id": "hyperparameter_tuning",
+      "name": "hyperparameter_tuning",
+      "tags": [],
+      "pipelines": [
+        "modeling"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "969c9482",
+      "target": "e86d3437"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "180b6027"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "1a149276"
+    },
+    {
+      "source": "a4876725",
+      "target": "38d7350c"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "c5660a34"
+    },
+    {
+      "source": "38d7350c",
+      "target": "d82bec08"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "099f417c"
+    },
+    {
+      "source": "4f1deb6c",
+      "target": "ce8bbad1"
+    },
+    {
+      "source": "f23452a4",
+      "target": "hyperparameter_tuning"
+    },
+    {
+      "source": "a829e896",
+      "target": "hyperparameter_tuning"
+    },
+    {
+      "source": "f23452a4",
+      "target": "969c9482"
+    },
+    {
+      "source": "f2d96b62",
+      "target": "38d7350c"
+    },
+    {
+      "source": "a829e896",
+      "target": "969c9482"
+    },
+    {
+      "source": "a829e896",
+      "target": "37513a45"
+    },
+    {
+      "source": "f23452a4",
+      "target": "37513a45"
+    },
+    {
+      "source": "43241260",
+      "target": "c5660a34"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "ce8bbad1"
+    },
+    {
+      "source": "37513a45",
+      "target": "a4876725"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "f2d96b62"
+    },
+    {
+      "source": "c5660a34",
+      "target": "38d7350c"
+    },
+    {
+      "source": "a829e896",
+      "target": "38d7350c"
+    },
+    {
+      "source": "f23452a4",
+      "target": "38d7350c"
+    },
+    {
+      "source": "38d7350c",
+      "target": "4783f58e"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "83059ae4"
+    },
+    {
+      "source": "f23452a4",
+      "target": "5101fd75"
+    },
+    {
+      "source": "a829e896",
+      "target": "5101fd75"
+    },
+    {
+      "source": "180b6027",
+      "target": "38d7350c"
+    },
+    {
+      "source": "5101fd75",
+      "target": "1a149276"
+    },
+    {
+      "source": "969c9482",
+      "target": "f2d96b62"
+    },
+    {
+      "source": "f23452a4",
+      "target": "4f1deb6c"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "e86d3437"
+    },
+    {
+      "source": "a829e896",
+      "target": "4f1deb6c"
+    },
+    {
+      "source": "37513a45",
+      "target": "099f417c"
+    },
+    {
+      "source": "43241260",
+      "target": "83059ae4"
+    },
+    {
+      "source": "hyperparameter_tuning",
+      "target": "a4876725"
+    },
+    {
+      "source": "4f1deb6c",
+      "target": "180b6027"
+    },
+    {
+      "source": "f23452a4",
+      "target": "43241260"
+    },
+    {
+      "source": "38d7350c",
+      "target": "5dd3ff40"
+    },
+    {
+      "source": "a829e896",
+      "target": "43241260"
+    },
+    {
+      "source": "f8802a59",
+      "target": "38d7350c"
+    }
+  ],
+  "layers": [
+    "feature",
+    "model",
+    "intermediate",
+    "primary",
+    "raw",
+    "hyperparameter_tuning",
+    "initial_model",
+    "model_output"
+  ],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "split_data",
+      "name": "split_data"
+    },
+    {
+      "id": "preprocess_data",
+      "name": "preprocess_data"
+    },
+    {
+      "id": "feature_selection",
+      "name": "feature_selection"
+    },
+    {
+      "id": "modeling",
+      "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "eda",
+      "name": "eda"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "f2d96b62",
+          "type": "data"
+        },
+        {
+          "id": "e86d3437",
+          "type": "data"
+        },
+        {
+          "id": "83059ae4",
+          "type": "data"
+        },
+        {
+          "id": "a4876725",
+          "type": "data"
+        },
+        {
+          "id": "a829e896",
+          "type": "parameters"
+        },
+        {
+          "id": "180b6027",
+          "type": "data"
+        },
+        {
+          "id": "38d7350c",
+          "type": "task"
+        },
+        {
+          "id": "d82bec08",
+          "type": "data"
+        },
+        {
+          "id": "1a149276",
+          "type": "data"
+        },
+        {
+          "id": "hyperparameter_tuning",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "f8802a59",
+          "type": "data"
+        },
+        {
+          "id": "c5660a34",
+          "type": "data"
+        },
+        {
+          "id": "099f417c",
+          "type": "data"
+        },
+        {
+          "id": "4783f58e",
+          "type": "data"
+        },
+        {
+          "id": "5dd3ff40",
+          "type": "data"
+        },
+        {
+          "id": "ce8bbad1",
+          "type": "data"
+        },
+        {
+          "id": "f23452a4",
+          "type": "data"
+        }
+      ]
+    },
+    "hyperparameter_tuning": {
+      "id": "hyperparameter_tuning",
+      "name": "hyperparameter_tuning",
+      "inputs": [
+        "a829e896",
+        "f23452a4"
+      ],
+      "outputs": [
+        "ce8bbad1",
+        "c5660a34",
+        "f2d96b62",
+        "180b6027",
+        "a4876725",
+        "1a149276",
+        "e86d3437",
+        "099f417c",
+        "83059ae4"
+      ],
+      "children": [
+        {
+          "id": "43241260",
+          "type": "task"
+        },
+        {
+          "id": "4f1deb6c",
+          "type": "task"
+        },
+        {
+          "id": "969c9482",
+          "type": "task"
+        },
+        {
+          "id": "37513a45",
+          "type": "task"
+        },
+        {
+          "id": "5101fd75",
+          "type": "task"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "modeling"
+}

@@ -1,0 +1,25 @@
+{
+  "code": "def eval_best_models(train, test, LR_optuna_params, LGBM_optuna_params, XGB_optuna_params, params):\n\n    models = {\n        'xgb': XGBClassifier(**XGB_optuna_params),\n        'lr': LogisticRegression(**LR_optuna_params),\n        'lgbm': LGBMClassifier(**LGBM_optuna_params)\n    }\n\n    results = {}\n    y_train_preds = pd.DataFrame()\n    y_test_preds = pd.DataFrame()\n    for name, model in models.items():\n        trained_model = _train_model(train, model, params)\n        res,y_train_pred,y_test_pred = _evaluate_model(trained_model, train, test, params)\n        y_train_pred['model'] = name\n        y_test_pred['model'] = name\n        y_train_preds = pd.concat([y_train_preds, y_train_pred], axis=0)\n        y_test_preds = pd.concat([y_test_preds, y_test_pred], axis=0)\n        results.update({f'{name}_{metric}': value for metric, value in res.items()})\n    return results, y_train_preds, y_test_preds\n",
+  "filepath": "psychological-state-classification\\src\\psychological_state_classification\\pipelines\\modeling\\nodes.py",
+  "parameters": {
+    "params": {
+      "target": "Mood_State",
+      "scoring": "roc_auc_ovr",
+      "n_trials": 30
+    }
+  },
+  "run_command": "kedro run --to-nodes='eval_best_models_node'",
+  "inputs": [
+    "train_model",
+    "test_model",
+    "LR_optuna_params_",
+    "LGBM_optuna_params_",
+    "XGB_optuna_params_",
+    "params:params"
+  ],
+  "outputs": [
+    "models_evaluation",
+    "y_train_preds",
+    "y_test_preds"
+  ]
+}

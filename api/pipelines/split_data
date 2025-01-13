@@ -1,0 +1,197 @@
+{
+  "nodes": [
+    {
+      "id": "4aa6555d",
+      "name": "preprocessed_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data",
+        "eda",
+        "preprocess_data"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting1"
+      ],
+      "layer": "intermediate",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 1000,
+        "columns": 22,
+        "file_size": 130418
+      }
+    },
+    {
+      "id": "9f6d7645",
+      "name": "split_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "parameters": {
+        "split_options": {
+          "test_size": 0.2,
+          "random_state": 2024,
+          "shuffle": true,
+          "target_col": "Mood_State"
+        }
+      }
+    },
+    {
+      "id": "22eec376",
+      "name": "params:split_options",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "64b583b0",
+      "name": "train_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data",
+        "eda",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "plotting2",
+        "feature_engineering"
+      ],
+      "layer": "primary",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 800,
+        "columns": 22,
+        "file_size": 111418
+      }
+    },
+    {
+      "id": "4f20c649",
+      "name": "test_data",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "split_data",
+        "feature_engineering"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feature_engineering"
+      ],
+      "layer": "primary",
+      "dataset_type": "pickle.pickle_dataset.PickleDataset",
+      "stats": {
+        "rows": 200,
+        "columns": 22,
+        "file_size": 30365
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "22eec376",
+      "target": "9f6d7645"
+    },
+    {
+      "source": "9f6d7645",
+      "target": "4f20c649"
+    },
+    {
+      "source": "9f6d7645",
+      "target": "64b583b0"
+    },
+    {
+      "source": "4aa6555d",
+      "target": "9f6d7645"
+    }
+  ],
+  "layers": [
+    "feature",
+    "hyperparameter_tuning",
+    "initial_model",
+    "intermediate",
+    "model",
+    "model_output",
+    "raw",
+    "primary"
+  ],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "split_data",
+      "name": "split_data"
+    },
+    {
+      "id": "preprocess_data",
+      "name": "preprocess_data"
+    },
+    {
+      "id": "feature_selection",
+      "name": "feature_selection"
+    },
+    {
+      "id": "modeling",
+      "name": "modeling"
+    },
+    {
+      "id": "feature_engineering",
+      "name": "feature_engineering"
+    },
+    {
+      "id": "eda",
+      "name": "eda"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "22eec376",
+          "type": "parameters"
+        },
+        {
+          "id": "9f6d7645",
+          "type": "task"
+        },
+        {
+          "id": "22eec376",
+          "type": "data"
+        },
+        {
+          "id": "64b583b0",
+          "type": "data"
+        },
+        {
+          "id": "4f20c649",
+          "type": "data"
+        },
+        {
+          "id": "4aa6555d",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "split_data"
+}

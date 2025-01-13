@@ -1,0 +1,12 @@
+{
+  "type": "plotly.plotly_dataset.PlotlyDataset",
+  "filepath": "/home/runner/work/anfrejter.github.io/anfrejter.github.io/data/07_model_output/plot_fi_xgb_w_px.json",
+  "run_command": "kedro run --to-outputs=plot_fi_xgb_w_px",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 15,
+    "columns": 2,
+    "file_size": 288
+  }
+}
